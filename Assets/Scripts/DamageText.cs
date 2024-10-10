@@ -10,11 +10,11 @@ public class DamageText : MonoBehaviour
     [SerializeField] private Vector3 randomiseOffset;
     [SerializeField] private Color damageColour;
 
-    private TextMeshProUGUI damageText;
+    private TextMeshPro damageText;
 
     private void Awake()
     {
-        damageText = GetComponent<TextMeshProUGUI>();
+        damageText = GetComponent<TextMeshPro>();
         transform.localPosition += offset;
         transform.localPosition += new Vector3(
             Random.Range(-randomiseOffset.x, randomiseOffset.x),
