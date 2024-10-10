@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    [Header("Inputs")]
     [SerializeField] private KeyCode forward = KeyCode.W;
     [SerializeField] private KeyCode backward = KeyCode.S;
     [SerializeField] private KeyCode left = KeyCode.A;
