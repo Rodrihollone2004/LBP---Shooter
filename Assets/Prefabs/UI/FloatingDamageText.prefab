@@ -9,14 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3703049418409495767}
-  - component: {fileID: 6634448808394829807}
   - component: {fileID: 4001043992075259143}
   - component: {fileID: 2022597188261910160}
   - component: {fileID: 3569661766048066613}
   - component: {fileID: -3133116054515230801}
   - component: {fileID: -4761982875870346641}
   m_Layer: 0
-  m_Name: FloatingDamageText 1
+  m_Name: FloatingDamageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,14 +40,6 @@ RectTransform:
   m_AnchoredPosition: {x: -7.95, y: 3.2573}
   m_SizeDelta: {x: 0.8401184, y: 0.5556861}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6634448808394829807
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4661733386142502394}
-  m_CullTransparentMesh: 0
 --- !u!114 &4001043992075259143
 MonoBehaviour:
   m_ObjectHideFlags: 0

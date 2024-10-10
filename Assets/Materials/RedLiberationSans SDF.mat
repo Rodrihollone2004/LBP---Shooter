@@ -35,6 +35,7 @@ Material:
     - _BumpOutline: 0
     - _FaceDilate: 0
     - _OutlineSoftness: 0.13
+    - _OutlineWidth: 0.27
     - _ScaleRatioB: 1
     - _ScaleRatioC: 0.73125
     m_Colors:
