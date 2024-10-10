@@ -6,7 +6,7 @@ public class ThrowItem : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] Transform cam; // Referencia a la cámara
-    [SerializeField] GameObject objectToThrow; // Objeto a lanzar
+    GameObject objectToThrow; // Objeto a lanzar
     private Camera mainCamera; // Cámara principal
 
     [Header("Settings")]
@@ -19,6 +19,8 @@ public class ThrowItem : MonoBehaviour
     [SerializeField] float throwUpwardForce; // Fuerza vertical adicional
 
     bool readyToThrow;
+
+    public GameObject ObjectToThrow { get => objectToThrow; set => objectToThrow = value; }
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class ThrowItem : MonoBehaviour
         }
     }
 
-    private void Throw()
+    public void Throw()
     {
         readyToThrow = false;
 
@@ -67,7 +69,7 @@ public class ThrowItem : MonoBehaviour
         Invoke(nameof(ResetThrow), throwCoolDown);
     }
 
-    private void ResetThrow()
+    public void ResetThrow()
     {
         readyToThrow = true; // Permite lanzar de nuevo
     }
