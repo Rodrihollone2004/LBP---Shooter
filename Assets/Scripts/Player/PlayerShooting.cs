@@ -41,6 +41,7 @@ public class PlayerShooting : MonoBehaviour
             canShoot = true;
             UpdateBulletCountText();
         }
+
     }
 
     private void Shoot()
@@ -55,7 +56,7 @@ public class PlayerShooting : MonoBehaviour
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                 if (damageable != null)
                 {
-                    damageable.DealDamage(damage, hit.point); 
+                    damageable.DealDamage(damage, hit.point);
                 }
             }
         }

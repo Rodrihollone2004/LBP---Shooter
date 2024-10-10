@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private Image healthbarFillImage;
     [SerializeField] private Color maxHealthColor = Color.green;
     [SerializeField] private Color zeroHealthColor = Color.red;
+    [SerializeField] private GameObject damageTextPrefab;
 
     private float currentHealth;
 
@@ -20,6 +21,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void DealDamage(int damage, Vector3 originPosition)
     {
         currentHealth -= damage;
+
+        Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageText>().Initialise(damage);
 
         if (currentHealth < 0)
         {
