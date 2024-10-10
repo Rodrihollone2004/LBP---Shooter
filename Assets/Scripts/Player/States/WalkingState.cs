@@ -26,7 +26,12 @@ public class WalkingState : IState
 
             player.TransitionToState(new JumpingState());
         }
-    }
+        else if (player.playerInput.IsCrouch)
+        {
+            player.TransitionToState(new CrouchingState());
+        }
+
+}
 
     public void ExitState(PlayerController player)
     {

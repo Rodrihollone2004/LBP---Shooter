@@ -3,20 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\damagetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\damagetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|c:\\users\\totig\\onedrive\\documents\\github\\lbp---shooter\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|c:\\users\\totig\\onedrive\\documents\\github\\lbp---shooter\\assets\\scripts\\player\\states\\walkingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\states\\walkingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|c:\\users\\totig\\onedrive\\documents\\github\\lbp---shooter\\assets\\scripts\\player\\states\\crouchingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\states\\crouchingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\playershooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playershooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\cameraflashbang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameraflashbang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\flashbang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\flashbang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|c:\\users\\totig\\onedrive\\documents\\github\\lbp---shooter\\assets\\scripts\\player\\playershooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playershooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|c:\\users\\totig\\onedrive\\documents\\github\\lbp---shooter\\assets\\scripts\\player\\trowitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\trowitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\smoke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\smoke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\damagetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\damagetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,30 +58,134 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DamageText.cs",
-              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\DamageText.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DamageText.cs",
-              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\DamageText.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DamageText.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "CrouchingState.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\CrouchingState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\States\\CrouchingState.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\CrouchingState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\States\\CrouchingState.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T03:13:41.962Z",
+              "WhenOpened": "2024-10-10T06:26:19.885Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "WalkingState.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\WalkingState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\States\\WalkingState.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\WalkingState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\States\\WalkingState.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAuwCAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T06:22:16.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAowA0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T06:19:58.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Smoke.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Smoke.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Smoke.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Smoke.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Smoke.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T05:25:40.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TrowItem.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\TrowItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\TrowItem.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\TrowItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\TrowItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T05:12:54.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerShooting.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerShooting.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerShooting.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerShooting.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerShooting.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAwwAoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T02:29:03.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CameraFlashbang.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\CameraFlashbang.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CameraFlashbang.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\CameraFlashbang.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\CameraFlashbang.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAcwAkAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T05:06:49.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\CameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CameraController.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\CameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\CameraController.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAcwAwAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T05:04:49.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Flashbang.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Flashbang.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Flashbang.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Flashbang.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Flashbang.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAowC0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T05:04:24.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "EnemyHealth.cs",
               "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\EnemyHealth.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyHealth.cs",
               "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\EnemyHealth.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyHealth.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T03:12:45.907Z",
               "EditorCaption": ""
@@ -62,23 +198,22 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerInput.cs",
               "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerInput.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerInput.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAIwDsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T02:43:15.884Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlayerShooting.cs",
-              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerShooting.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerShooting.cs",
-              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerShooting.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerShooting.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAArwDsAAAARAAAA",
+              "DocumentIndex": 11,
+              "Title": "DamageText.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\DamageText.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DamageText.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\DamageText.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DamageText.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:29:03.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T03:13:41.962Z"
             }
           ]
         }
