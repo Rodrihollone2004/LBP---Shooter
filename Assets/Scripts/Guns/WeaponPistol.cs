@@ -1,34 +1,34 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
-public class PlayerShooting : MonoBehaviour
+public class WeaponPistol : MonoBehaviour, IWeapon
 {
-    [SerializeField] private TextMeshProUGUI bulletCountText;
-    [SerializeField] private int damage = 10;
+    [SerializeField] private TextMeshProUGUI bulletPistolCountText;
+    [SerializeField] private int damagePistol = 20;
+    private int bulletPistolCount;
+
     private bool canShoot = true;
-    private int bulletCount;
 
     private Camera mainCamera;
 
     private void Awake()
     {
-        bulletCount = 20;
-        UpdateBulletCountText();
+        bulletPistolCount = 20;
 
         mainCamera = Camera.main;
     }
 
-    private void Update()
+    public void WeaponController()
     {
         if (canShoot && Input.GetButtonDown("Fire1"))
         {
-            if (bulletCount > 0)
+            if (bulletPistolCount > 0)
             {
-                Shoot(); 
-                bulletCount--;
-                UpdateBulletCountText();
+                Shoot();
+                bulletPistolCount--;
+                UpdateBulletsCount();
 
-                if (bulletCount <= 0)
+                if (bulletPistolCount <= 0)
                 {
                     canShoot = false;
                 }
@@ -37,14 +37,13 @@ public class PlayerShooting : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            bulletCount = 20;
+            bulletPistolCount = 20;
             canShoot = true;
-            UpdateBulletCountText();
+            UpdateBulletsCount();
         }
-
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
@@ -56,14 +55,14 @@ public class PlayerShooting : MonoBehaviour
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                 if (damageable != null)
                 {
-                    damageable.DealDamage(damage, hit.point);
+                    damageable.DealDamage(damagePistol, hit.point);
                 }
             }
         }
     }
 
-    private void UpdateBulletCountText()
+    public void UpdateBulletsCount()
     {
-        bulletCountText.text = "Bullets: " + bulletCount;
+        bulletPistolCountText.text = "Bullets Pistol: " + bulletPistolCount;
     }
 }
