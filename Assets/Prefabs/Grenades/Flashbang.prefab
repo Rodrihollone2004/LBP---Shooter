@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9102829566335032198}
   - component: {fileID: 5613020992699015249}
   - component: {fileID: -382525985410391911}
+  - component: {fileID: -9117659411286079381}
   m_Layer: 0
   m_Name: Flashbang
   m_TagString: Untagged
@@ -5004,8 +5005,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwKey: 109
-  flashbangPrefab: {fileID: 5425807012612619997}
+  objectToThrow: {fileID: 5425807012612619997}
   throwForce: 15
   throwUpwardForce: 0
-  totalThrows: 100
+  totalThrows: 88
   throwCoolDown: 0.1
+--- !u!114 &-9117659411286079381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425807012612619997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575b34fca86038f4eb0653292207ae15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 0}

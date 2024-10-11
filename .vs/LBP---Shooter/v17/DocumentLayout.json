@@ -1,30 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\LBP---Shooter\\",
+  "WorkspaceRootPath": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|d:\\lbp---shooter\\assets\\scripts\\flashbang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\flashbang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\grenades\\flashbang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grenades\\flashbang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|D:\\LBP---Shooter\\assets\\scripts\\smoke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\smoke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\grenades\\smoke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grenades\\smoke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|D:\\LBP---Shooter\\assets\\scripts\\guns\\playershooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\guns\\playershooting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\grenades\\igrenade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grenades\\igrenade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|D:\\LBP---Shooter\\assets\\scripts\\guns\\weaponak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\grenades\\grenadecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grenades\\grenadecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\guns\\weaponak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\guns\\weaponak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\LBP---Shooter\\assets\\scripts\\guns\\igrenade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\guns\\igrenade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\LBP---Shooter\\assets\\scripts\\grenadecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\grenadecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,75 +39,76 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "WeaponAK.cs",
-              "DocumentMoniker": "D:\\LBP---Shooter\\Assets\\Scripts\\Guns\\WeaponAK.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Guns\\WeaponAK.cs",
-              "ToolTip": "D:\\LBP---Shooter\\Assets\\Scripts\\Guns\\WeaponAK.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Guns\\WeaponAK.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\CameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CameraController.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\CameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\CameraController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:37:47.462Z"
+              "WhenOpened": "2024-10-11T01:04:33.339Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Smoke.cs",
-              "DocumentMoniker": "D:\\LBP---Shooter\\Assets\\Scripts\\Smoke.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Smoke.cs",
-              "ToolTip": "D:\\LBP---Shooter\\Assets\\Scripts\\Smoke.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Smoke.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwGAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Grenades\\Smoke.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Grenades\\Smoke.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Grenades\\Smoke.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Grenades\\Smoke.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAEUAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:17:57.218Z"
+              "WhenOpened": "2024-10-11T00:51:20.202Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Flashbang.cs",
-              "DocumentMoniker": "D:\\LBP---Shooter\\Assets\\Scripts\\Flashbang.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Flashbang.cs",
-              "ToolTip": "D:\\LBP---Shooter\\Assets\\Scripts\\Flashbang.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Flashbang.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAswB0AAAAYAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Grenades\\Flashbang.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Grenades\\Flashbang.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Grenades\\Flashbang.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Grenades\\Flashbang.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAuwG0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:11:59.611Z",
+              "WhenOpened": "2024-10-11T00:51:18.802Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GrenadeController.cs",
-              "DocumentMoniker": "D:\\LBP---Shooter\\Assets\\Scripts\\GrenadeController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GrenadeController.cs",
-              "ToolTip": "D:\\LBP---Shooter\\Assets\\Scripts\\GrenadeController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GrenadeController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:25:06.198Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PlayerShooting.cs",
-              "DocumentMoniker": "D:\\LBP---Shooter\\Assets\\Scripts\\Guns\\PlayerShooting.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Guns\\PlayerShooting.cs",
-              "ToolTip": "D:\\LBP---Shooter\\Assets\\Scripts\\Guns\\PlayerShooting.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Guns\\PlayerShooting.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAqwCAAAAAfAAAAAAAAAA==",
+              "Title": "IGrenade.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Grenades\\IGrenade.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Grenades\\IGrenade.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Grenades\\IGrenade.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Grenades\\IGrenade.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:23:58.459Z"
+              "WhenOpened": "2024-10-11T00:51:19.589Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IGrenade.cs",
-              "DocumentMoniker": "D:\\LBP---Shooter\\Assets\\Scripts\\Guns\\IGrenade.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Guns\\IGrenade.cs",
-              "ToolTip": "D:\\LBP---Shooter\\Assets\\Scripts\\Guns\\IGrenade.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Guns\\IGrenade.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Title": "GrenadeController.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Grenades\\GrenadeController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Grenades\\GrenadeController.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Grenades\\GrenadeController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Grenades\\GrenadeController.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAmwCIAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:19:26.05Z"
+              "WhenOpened": "2024-10-11T00:51:19.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeaponAK.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Guns\\WeaponAK.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Guns\\WeaponAK.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Guns\\WeaponAK.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Guns\\WeaponAK.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T22:37:47.462Z"
             }
           ]
         }

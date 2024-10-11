@@ -16,7 +16,7 @@ public class Flashbang : MonoBehaviour, IGrenade
     [SerializeField] KeyCode throwKey = KeyCode.M;
 
     private Camera mainCamera;
-    GameObject objectToThrow;    
+    [SerializeField] GameObject objectToThrow;    
     [SerializeField] float throwForce;
     [SerializeField] float throwUpwardForce;
 
@@ -96,40 +96,28 @@ public class Flashbang : MonoBehaviour, IGrenade
 
     public void Throw()
     {
-        readyToThrow = false;
+        if (objectToThrow != null && ReadyToThrow)
+        {
+            GameObject thrownObject = Instantiate(objectToThrow, MainCamera.transform.position + MainCamera.transform.forward, Quaternion.identity);
 
-        // Lanza un rayo desde el centro de la pantalla
-        Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+            Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
 
-        // Si el rayo impacta en un objeto
-        Vector3 throwPosition;
+            if (rb != null)
+            {
+                Vector3 throwDirection = MainCamera.transform.forward;
+                rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
+                rb.AddForce(MainCamera.transform.up * throwUpwardForce, ForceMode.Impulse);
+            }
 
-        // Si no impacta, lanza desde la posición de la cámara
-        throwPosition = ray.origin + ray.direction * 5f; // Un poco delante de la cámara
+            totalThrows--;
 
-        // Instanciar el objeto a lanzar
-        GameObject throwObject = Instantiate(objectToThrow, throwPosition, Quaternion.identity);
-
-        // RigidBody
-        Rigidbody rbProjectile = throwObject.GetComponent<Rigidbody>();
-
-        // Dirección
-        Vector3 forceDirection = ray.direction.normalized;
-
-        // Fuerza
-        Vector3 forceAdd = forceDirection * throwForce + transform.up * throwUpwardForce;
-
-        rbProjectile.AddForce(forceAdd, ForceMode.Impulse);
-
-        totalThrows--; // Reduce el total de lanzamientos disponibles
-
-        // CoolDown Throws
-        Invoke(nameof(ResetThrow), throwCoolDown);
+            Invoke(nameof(ResetThrow), throwCoolDown);
+        }
     }
 
     public void ResetThrow()
     {
-        readyToThrow = true; // Permite lanzar de nuevo
+        readyToThrow = true;
     }
 
     public void GrenadeInputs()
