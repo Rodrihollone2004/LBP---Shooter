@@ -16,25 +16,25 @@ public class WalkingState : IState
 
         player.Move(moveDirection, player.WalkSpeed);
 
+        // Revisamos si el jugador está corriendo
         if (player.playerInput.IsRunning)
         {
             player.TransitionToState(new RunningState());
         }
+        // Revisamos si el jugador está saltando
         else if (player.playerInput.IsJumping)
         {
+            // Calcula la velocidad vertical ANTES de la transición
             player.VerticalVelocity = Mathf.Sqrt(player.JumpHeight * -2f * player.Gravity);
 
+            // Transiciona al estado de salto
             player.TransitionToState(new JumpingState());
         }
-        else if (player.playerInput.IsCrouch)
-        {
-            player.TransitionToState(new CrouchingState());
-        }
-
-}
+    }
 
     public void ExitState(PlayerController player)
     {
         Debug.Log("Saliendo del estado: Caminar");
     }
 }
+

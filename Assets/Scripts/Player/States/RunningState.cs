@@ -26,6 +26,7 @@ public class RunningState : IState
         }
     }
 
+
     public void ExitState(PlayerController player)
     {
         Debug.Log("Saliendo del estado: Correr");

@@ -7,7 +7,6 @@ public class JumpingState : IState
     public void EnterState(PlayerController player)
     {
         Debug.Log("Entrando al estado: Saltar");
-        player.CalculateVertical();
     }
 
     public void UpdateState(PlayerController player)
@@ -29,3 +28,4 @@ public class JumpingState : IState
         Debug.Log("Saliendo del estado: Saltar");
     }
 }
+

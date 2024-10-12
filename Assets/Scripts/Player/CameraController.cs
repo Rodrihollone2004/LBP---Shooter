@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     private float xRot = 0f;
     [SerializeField] public Transform playerBody;
 
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

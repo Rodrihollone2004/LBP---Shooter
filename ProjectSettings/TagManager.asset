@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - WhiteImage
   - WhiteNoise
-  - Spawner
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -15,8 +15,8 @@ TagManager:
   - Floor
   - Water
   - UI
-  - Outline Objects
   - Walls
+  - asd
   - 
   - 
   - 
