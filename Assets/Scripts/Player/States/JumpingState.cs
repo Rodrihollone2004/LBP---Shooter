@@ -6,26 +6,30 @@ public class JumpingState : IState
 {
     public void EnterState(PlayerController player)
     {
-        Debug.Log("Entrando al estado: Saltar");
     }
 
     public void UpdateState(PlayerController player)
     {
-        player.CalculateVertical();
+        player.CalculateVertical(); 
 
         Vector3 inputVector = player.playerInput.InputVector;
         Vector3 moveDirection = new Vector3(inputVector.x, 0, inputVector.z).normalized;
-        player.Move(moveDirection, player.WalkSpeed);
+
+        float speed = player.playerInput.IsRunning ? player.RunSpeed : player.WalkSpeed;
+        player.Move(moveDirection, speed);
 
         if (player.IsGrounded)
         {
             player.TransitionToState(new WalkingState());
         }
+        else if (player.IsTouchingWall() && player.playerInput.IsRunning)
+        {
+            player.TransitionToState(new WallRunningState());
+        }
     }
 
     public void ExitState(PlayerController player)
     {
-        Debug.Log("Saliendo del estado: Saltar");
     }
 }
 

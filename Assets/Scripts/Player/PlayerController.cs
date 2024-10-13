@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +22,13 @@ public class PlayerController : MonoBehaviour
 
     private float verticalVelocity;
     public float VerticalVelocity { get => verticalVelocity; set => verticalVelocity = value; }
+
+
+    public LayerMask wallLayer;
+    private float wallCheckDistance = 2f;
+    public bool isWallRunning;
+
+    public RaycastHit wallHit;
 
     void Start()
     {
@@ -59,12 +68,17 @@ public class PlayerController : MonoBehaviour
             {
                 verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
+            else
+            {
+                verticalVelocity = 0;
+            }
         }
         else
         {
-            verticalVelocity += gravity * Time.deltaTime;
+            verticalVelocity += gravity * Time.deltaTime; 
         }
     }
+
 
 
     public bool IsGrounded
@@ -81,4 +95,24 @@ public class PlayerController : MonoBehaviour
         float targetLocalScaleY = playerInput.IsCrouch ? 0.65f : 1f;
         transform.localScale = new Vector3(1, targetHeight, 1);
     }
+
+    public bool IsTouchingWall()
+    {
+        Vector3 position = transform.position + Vector3.up * 0.5f;
+
+        bool touchingWall = Physics.Raycast(position, mainCamera.transform.right, out wallHit, wallCheckDistance, wallLayer) || // Derecha
+                            Physics.Raycast(position, -mainCamera.transform.right, out wallHit, wallCheckDistance, wallLayer) || // Izquierda
+                            Physics.Raycast(position, mainCamera.transform.forward, out wallHit, wallCheckDistance, wallLayer) || // Frontal
+                            Physics.Raycast(position, -mainCamera.transform.forward, out wallHit, wallCheckDistance, wallLayer); // Detrás
+
+
+        Debug.DrawRay(position, mainCamera.transform.right * wallCheckDistance, Color.red); 
+        Debug.DrawRay(position, -mainCamera.transform.right * wallCheckDistance, Color.green);
+        Debug.DrawRay(position, mainCamera.transform.forward * wallCheckDistance, Color.blue); 
+        Debug.DrawRay(position, -mainCamera.transform.forward * wallCheckDistance, Color.yellow);
+
+        return touchingWall;
+    }
+
+
 }

@@ -2376,6 +2376,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1903651531}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  isWallRunning: 0
 --- !u!114 &1903651531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,7 +2479,7 @@ GameObject:
   - component: {fileID: 1965695641}
   - component: {fileID: 1965695640}
   - component: {fileID: 1965695639}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Wall
   m_Icon: {fileID: 0}
