@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|c:\\users\\totig\\onedrive\\documents\\github\\lbp---shooter\\assets\\scripts\\player\\states\\wallrunningstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\states\\wallrunningstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\states\\wallrunningstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\states\\jumpingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|c:\\users\\totig\\onedrive\\documents\\github\\lbp---shooter\\assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -58,8 +58,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\CameraController.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T04:24:49.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T04:24:49.562Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerInput.cs",
               "ViewState": "AQIAACgAAAAAAAAAAAAuwDQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T03:17:03.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T03:17:03.597Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\States\\WallRunningState.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAowAcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T03:25:20.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T03:25:20.617Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\States\\JumpingState.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAuwBIAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T02:26:01.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T02:26:01.747Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\States\\IState.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T02:25:59.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T02:25:59.733Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\States\\CrouchingState.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T02:25:57.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T02:25:57.856Z"
             },
             {
               "$type": "Document",
@@ -149,8 +143,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\States\\WalkingState.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAcwBkAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T02:25:13.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T02:25:13.623Z"
             },
             {
               "$type": "Document",
@@ -162,8 +155,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\States\\RunningState.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAuwCEAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T02:25:07.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T02:25:07.429Z"
             }
           ]
         }
