@@ -6,7 +6,7 @@ public class WallRunningState : IState
 {
     public void EnterState(PlayerController player)
     {
-        player.isWallRunning = true;
+        player.IsWallRunning = true;
         player.VerticalVelocity = 0f; 
     }
 
@@ -38,7 +38,7 @@ public class WallRunningState : IState
 
     public void ExitState(PlayerController player)
     {
-        player.isWallRunning = false;
+        player.IsWallRunning = false;
         player.VerticalVelocity = 0f; 
     }
 }

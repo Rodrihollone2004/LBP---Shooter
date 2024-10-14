@@ -24,9 +24,11 @@ public class PlayerController : MonoBehaviour
     public float VerticalVelocity { get => verticalVelocity; set => verticalVelocity = value; }
 
 
-    public LayerMask wallLayer;
+    [SerializeField] private LayerMask wallLayer;
     private float wallCheckDistance = 2f;
-    public bool isWallRunning;
+    private bool isWallRunning;
+
+    public bool IsWallRunning { get => isWallRunning; set => isWallRunning = value; }
 
     public RaycastHit wallHit;
 
@@ -88,7 +90,6 @@ public class PlayerController : MonoBehaviour
             return characterController.isGrounded;
         }
     }
-
 
     public void AdjustCrouchHeight(float targetHeight)
     {

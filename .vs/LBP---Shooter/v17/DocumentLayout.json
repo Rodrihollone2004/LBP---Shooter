@@ -15,12 +15,12 @@
       "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\states\\wallrunningstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\states\\jumpingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\states\\jumpingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\states\\jumpingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\states\\jumpingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BCF37495-405B-B305-4B1C-19AD148C876D}|Assembly-CSharp.csproj|C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\assets\\scripts\\player\\states\\walkingstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +50,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "CameraController.cs",
               "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\CameraController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CameraController.cs",
@@ -58,7 +58,8 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\CameraController.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T04:24:49.562Z"
+              "WhenOpened": "2024-10-13T04:24:49.562Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -68,9 +69,22 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
               "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAYwB4AAAAeAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T03:17:06.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WallRunningState.cs",
+              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\WallRunningState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\States\\WallRunningState.cs",
+              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\WallRunningState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\States\\WallRunningState.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAgwAgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T03:25:20.617Z",
               "EditorCaption": ""
             },
             {
@@ -81,25 +95,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerInput.cs",
               "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\PlayerInput.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerInput.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAuwDQAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T03:17:03.597Z"
+              "WhenOpened": "2024-10-13T03:17:03.597Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WallRunningState.cs",
-              "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\WallRunningState.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\States\\WallRunningState.cs",
-              "ToolTip": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\WallRunningState.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\States\\WallRunningState.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowAcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T03:25:20.617Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "JumpingState.cs",
               "DocumentMoniker": "C:\\Users\\TotiG\\OneDrive\\Documents\\GitHub\\LBP---Shooter\\Assets\\Scripts\\Player\\States\\JumpingState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\States\\JumpingState.cs",
