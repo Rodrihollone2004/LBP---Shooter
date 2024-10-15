@@ -32,6 +32,12 @@ public class PlayerController : MonoBehaviour
 
     public RaycastHit wallHit;
 
+    [Header("Graffiti Settings")]
+    [SerializeField] private Texture graffitiTexture;
+    [SerializeField] private float graffitiSize = 1f;
+    [SerializeField] private LayerMask placementLayer; 
+    [SerializeField] private Material graffitiMaterial; 
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -45,6 +51,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
+
+        HandleGraffitiPlacement();
+    }
+
+    private void HandleGraffitiPlacement()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            PlaceGraffiti();
+        }
     }
 
     public void TransitionToState(IState newState)
@@ -114,6 +130,24 @@ public class PlayerController : MonoBehaviour
 
         return touchingWall;
     }
+    private void PlaceGraffiti()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, 10f, placementLayer))
+        {
+            GameObject graffitiQuad = GameObject.CreatePrimitive(PrimitiveType.Quad);
 
+            Renderer quadRenderer = graffitiQuad.GetComponent<Renderer>();
+            quadRenderer.material = graffitiMaterial;
+
+            quadRenderer.material.mainTexture = graffitiTexture;
+
+            graffitiQuad.transform.position = hitInfo.point + hitInfo.normal * 0.01f; 
+            graffitiQuad.transform.rotation = Quaternion.LookRotation(hitInfo.normal);
+            graffitiQuad.transform.localScale = new Vector3(graffitiSize, graffitiSize, 1f);
+
+            Destroy(graffitiQuad.GetComponent<Collider>());
+        }
+    }
 
 }
