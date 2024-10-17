@@ -31,7 +31,6 @@ public class Smoke: MonoBehaviour, IGrenade
         Renderer = GetComponent<MeshRenderer>();
         SmokeParticle = GetComponent<ParticleSystem>();
         RB = GetComponent<Rigidbody>();
-        RB.velocity = new Vector3(10, 0, 0);
         StartCoroutine(GrenadeController());
 
         //Para lanzar el objeto

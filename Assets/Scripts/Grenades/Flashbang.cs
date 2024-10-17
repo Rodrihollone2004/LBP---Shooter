@@ -37,7 +37,6 @@ public class Flashbang : MonoBehaviour, IGrenade
         //Bang = GameObject.FindGameObjectWithTag("Bang").GetComponent<AudioSource>();
         FlashParticle = gameObject.GetComponent<ParticleSystem>();
         RB = gameObject.GetComponent<Rigidbody>();
-        RB.velocity = new Vector3(10, 0, 0);
         player = FindObjectOfType<CameraFlashbang>();
         StartCoroutine(GrenadeController());
 
