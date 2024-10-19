@@ -6,8 +6,11 @@ public class WeaponAK : MonoBehaviour, IWeapon
     [SerializeField] private TextMeshProUGUI bulletAkCountText;
     [SerializeField] private int damageAk = 5;
     [SerializeField] private float shootCooldown = 0.1f;
-    private int bulletAkCount;
+    [SerializeField] private AudioClip shootSoundAk;
+    [SerializeField] private AudioClip reloadSoundAk;
+    private AudioSource audioSource; 
 
+    private int bulletAkCount;
     private bool canShoot = true;
     private float nextShootTime = 0f;
 
@@ -16,8 +19,8 @@ public class WeaponAK : MonoBehaviour, IWeapon
     private void Awake()
     {
         bulletAkCount = 20;
-
         mainCamera = Camera.main;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void WeaponController()
@@ -44,6 +47,8 @@ public class WeaponAK : MonoBehaviour, IWeapon
             bulletAkCount = 20;
             canShoot = true;
             UpdateBulletsCount();
+
+            audioSource.PlayOneShot(reloadSoundAk);
         }
     }
 
@@ -64,6 +69,7 @@ public class WeaponAK : MonoBehaviour, IWeapon
                 }
             }
         }
+        audioSource.PlayOneShot(shootSoundAk);
     }
 
     public void UpdateBulletsCount()

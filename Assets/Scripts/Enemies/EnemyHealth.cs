@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private Color maxHealthColor = Color.green;
     [SerializeField] private Color zeroHealthColor = Color.red;
     [SerializeField] private GameObject damageTextPrefab;
+    [SerializeField] private AudioClip damageSound;
+    private AudioSource audioSource;
 
     private float currentHealth;
 
@@ -16,11 +18,17 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         currentHealth = maxHealth;
         SetHealthbarUi();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void DealDamage(int damage, Vector3 originPosition)
     {
         currentHealth -= damage;
+
+        if (damageSound != null)
+        {
+            audioSource.PlayOneShot(damageSound);
+        }
 
         Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageText>().Initialise(damage);
 

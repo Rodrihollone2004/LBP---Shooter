@@ -31,6 +31,10 @@ public class WalkingState : IState
             player.VerticalVelocity = Mathf.Sqrt(player.JumpHeight * -2f * player.Gravity);
             player.TransitionToState(new JumpingState());
         }
+        else if (player.playerInput.IsCrouch)
+        {
+            player.TransitionToState(new CrouchingState());
+        }
     }
 
     public void ExitState(PlayerController player)

@@ -5,17 +5,19 @@ public class WeaponPistol : MonoBehaviour, IWeapon
 {
     [SerializeField] private TextMeshProUGUI bulletPistolCountText;
     [SerializeField] private int damagePistol = 20;
+    [SerializeField] private AudioClip shootSoundPistol;
+    [SerializeField] private AudioClip reloadSoundPistol;
+    private AudioSource audioSource;
+
     private int bulletPistolCount;
-
     private bool canShoot = true;
-
     private Camera mainCamera;
 
     private void Awake()
     {
         bulletPistolCount = 20;
-
         mainCamera = Camera.main;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void WeaponController()
@@ -40,6 +42,8 @@ public class WeaponPistol : MonoBehaviour, IWeapon
             bulletPistolCount = 20;
             canShoot = true;
             UpdateBulletsCount();
+
+            audioSource.PlayOneShot(reloadSoundPistol);
         }
     }
 
@@ -59,6 +63,7 @@ public class WeaponPistol : MonoBehaviour, IWeapon
                 }
             }
         }
+        audioSource.PlayOneShot(shootSoundPistol);
     }
 
     public void UpdateBulletsCount()

@@ -6,7 +6,6 @@ public class CrouchingState : IState
 {
     public void EnterState(PlayerController player)
     {
-        Debug.Log("Entrando al estado: Agacharse");
         player.AdjustCrouchHeight(0.65f);
     }
 
@@ -29,7 +28,6 @@ public class CrouchingState : IState
     }
     public void ExitState(PlayerController player)
     {
-        Debug.Log("Saliendo del estado: Agacharse");
         player.AdjustCrouchHeight(1f);
     }
 }
