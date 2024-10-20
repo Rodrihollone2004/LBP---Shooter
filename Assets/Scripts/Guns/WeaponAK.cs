@@ -96,6 +96,13 @@ public class WeaponAK : MonoBehaviour, IWeapon
                 impactEffect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 StartCoroutine(DestroyImpactAfterDelay(impactEffect, 1f));
             }
+
+            MovingTarget target = hit.transform.GetComponent<MovingTarget>();
+
+            if (target != null)
+            {
+                target.OnHitByRaycast();
+            }
         }
 
         audioSource.PlayOneShot(shootSoundAk);
