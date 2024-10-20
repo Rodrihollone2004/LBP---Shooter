@@ -1021,7 +1021,7 @@ MonoBehaviour:
   impactLayers:
     serializedVersion: 2
     m_Bits: 200
-  impactPrefab: {fileID: 2103692828179089331, guid: d1b3226761486614abaaa82ebba2fafc,
+  impactPrefab: {fileID: 8790676545338902259, guid: 750b311062830d345bdf64926b16fc0d,
     type: 3}
 --- !u!82 &379338876
 AudioSource:
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   impactLayers:
     serializedVersion: 2
     m_Bits: 200
-  impactPrefab: {fileID: 2103692828179089331, guid: d1b3226761486614abaaa82ebba2fafc,
+  impactPrefab: {fileID: 8790676545338902259, guid: 750b311062830d345bdf64926b16fc0d,
     type: 3}
 --- !u!82 &728277276
 AudioSource:
