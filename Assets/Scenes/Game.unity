@@ -1018,6 +1018,11 @@ MonoBehaviour:
   damagePistol: 15
   shootSoundPistol: {fileID: 8300000, guid: 4e62f8e4651f4ac40a671a4d4eb71ecf, type: 3}
   reloadSoundPistol: {fileID: 8300000, guid: 65797bf9a87c9a044be5ce89b91fbdf2, type: 3}
+  impactLayers:
+    serializedVersion: 2
+    m_Bits: 200
+  impactPrefab: {fileID: 8790676545338902259, guid: 750b311062830d345bdf64926b16fc0d,
+    type: 3}
 --- !u!82 &379338876
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1766,6 +1771,11 @@ MonoBehaviour:
   shootCooldown: 0.1
   shootSoundAk: {fileID: 8300000, guid: fd0c88389f93b65419d24fdaa6720037, type: 3}
   reloadSoundAk: {fileID: 8300000, guid: 65797bf9a87c9a044be5ce89b91fbdf2, type: 3}
+  impactLayers:
+    serializedVersion: 2
+    m_Bits: 200
+  impactPrefab: {fileID: 8790676545338902259, guid: 750b311062830d345bdf64926b16fc0d,
+    type: 3}
 --- !u!82 &728277276
 AudioSource:
   m_ObjectHideFlags: 0

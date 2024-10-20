@@ -33,7 +33,6 @@ public class Smoke: MonoBehaviour, IGrenade
         RB = GetComponent<Rigidbody>();
         StartCoroutine(GrenadeController());
 
-        //Para lanzar el objeto
         mainCamera = Camera.main; 
         readyToThrow = true; 
     }

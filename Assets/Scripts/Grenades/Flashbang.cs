@@ -40,7 +40,6 @@ public class Flashbang : MonoBehaviour, IGrenade
         player = FindObjectOfType<CameraFlashbang>();
         StartCoroutine(GrenadeController());
 
-        //Para lanzar el objeto
     }
 
     public IEnumerator GrenadeController()
