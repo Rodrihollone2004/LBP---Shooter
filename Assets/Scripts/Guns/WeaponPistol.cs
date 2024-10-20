@@ -67,13 +67,13 @@ public class WeaponPistol : MonoBehaviour, IWeapon
 
         if (Physics.Raycast(ray, out hit))
         {
-            if ((impactLayers.value & (1 << hit.collider.gameObject.layer)) > 0)
+            if (hit.collider.CompareTag("Target"))  
             {
-                
-                Vector3 impactPosition = hit.point + hit.normal * 0.01f; 
-                GameObject impactEffect = Instantiate(impactPrefab, impactPosition, Quaternion.LookRotation(hit.normal));
-                impactEffect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                StartCoroutine(DestroyImpactAfterDelay(impactEffect, 1f));
+                ShootingRange shootingRange = FindObjectOfType<ShootingRange>();
+                if (shootingRange != null)
+                {
+                    shootingRange.HitTarget(hit.collider.gameObject);  
+                }
             }
 
             if (hit.collider.CompareTag("Enemy"))
@@ -84,9 +84,18 @@ public class WeaponPistol : MonoBehaviour, IWeapon
                     damageable.DealDamage(damagePistol, hit.point);
                 }
             }
+
+            if ((impactLayers.value & (1 << hit.collider.gameObject.layer)) > 0)
+            {
+                Vector3 impactPosition = hit.point + hit.normal * 0.01f;
+                GameObject impactEffect = Instantiate(impactPrefab, impactPosition, Quaternion.LookRotation(hit.normal));
+                impactEffect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                StartCoroutine(DestroyImpactAfterDelay(impactEffect, 1f));
+            }
         }
         audioSource.PlayOneShot(shootSoundPistol);
     }
+
 
 
     private IEnumerator DestroyImpactAfterDelay(GameObject impactEffect, float delay)

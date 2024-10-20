@@ -7,9 +7,13 @@ public class WeaponAK : MonoBehaviour, IWeapon
     [SerializeField] private TextMeshProUGUI bulletAkCountText;
     [SerializeField] private int damageAk = 5;
     [SerializeField] private float shootCooldown = 0.1f;
+    [Header("Sounds")]
     [SerializeField] private AudioClip shootSoundAk;
     [SerializeField] private AudioClip reloadSoundAk;
-    private AudioSource audioSource; 
+    [Header("ShootHole")]
+    [SerializeField] private LayerMask impactLayers; 
+    [SerializeField] private GameObject impactPrefab;
+    private AudioSource audioSource;
 
     private int bulletAkCount;
     private bool canShoot = true;
@@ -46,7 +50,6 @@ public class WeaponAK : MonoBehaviour, IWeapon
         if (Input.GetKeyDown(KeyCode.R))
         {
             audioSource.PlayOneShot(reloadSoundAk);
-
             StartCoroutine(ReloadGun());
         }
     }
@@ -68,6 +71,15 @@ public class WeaponAK : MonoBehaviour, IWeapon
 
         if (Physics.Raycast(ray, out hit))
         {
+            if (hit.collider.CompareTag("Target"))
+            {
+                ShootingRange shootingRange = FindObjectOfType<ShootingRange>();
+                if (shootingRange != null)
+                {
+                    shootingRange.HitTarget(hit.collider.gameObject); 
+                }
+            }
+
             if (hit.collider.CompareTag("Enemy"))
             {
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
@@ -76,12 +88,27 @@ public class WeaponAK : MonoBehaviour, IWeapon
                     damageable.DealDamage(damageAk, hit.point);
                 }
             }
+
+            if ((impactLayers.value & (1 << hit.collider.gameObject.layer)) > 0)
+            {
+                Vector3 impactPosition = hit.point + hit.normal * 0.01f;
+                GameObject impactEffect = Instantiate(impactPrefab, impactPosition, Quaternion.LookRotation(hit.normal));
+                impactEffect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                StartCoroutine(DestroyImpactAfterDelay(impactEffect, 1f));
+            }
         }
+
         audioSource.PlayOneShot(shootSoundAk);
+    }
+
+    private IEnumerator DestroyImpactAfterDelay(GameObject impactEffect, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(impactEffect);
     }
 
     public void UpdateBulletsCount()
     {
-        bulletAkCountText.text = "Bullets Ak: " + bulletAkCount;
+        bulletAkCountText.text = "Bullets AK: " + bulletAkCount;
     }
 }
