@@ -4,62 +4,77 @@ using UnityEngine;
 
 public class MovingTarget : MonoBehaviour
 {
-    [Header("Movimiento")]
+    [Header("Movement")]
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float minX = -7f;
     [SerializeField] private float maxX = 7f;
 
     [Header("Respawn")]
-    [SerializeField] private Vector2 respawnRangeX = new Vector2(-7f, 7f); 
-    [SerializeField] private Vector2 respawnRangeY = new Vector2(1.5f, 3f);  
-    [SerializeField] private float respawnZ = -10f; 
+    [SerializeField] private Vector2 respawnRangeX = new Vector2(-7f, 7f);
+    [SerializeField] private Vector2 respawnRangeY = new Vector2(1.5f, 3f);
+    [SerializeField] private float respawnZ = -10f;
 
-    private Vector3 initialPosition;
-    private bool movingRight = true;
+    private object movement;
 
     private void Start()
     {
-        initialPosition = transform.position; 
+        movement = MovementFactory.CreateMovement("Normal", minX, maxX);
     }
 
     private void Update()
     {
-        MoveTarget(); 
+        MoveTarget();
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ChangeMovementType("Fast"); 
+        }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            ChangeMovementType("Slow");
+        }
+        else if (Input.GetKeyDown(KeyCode.J))
+        {
+            ChangeMovementType("Normal"); 
+        }
     }
+
     private void MoveTarget()
     {
-        if (movingRight)
+        if (movement is NormalMovement normalMovement)
         {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);  
-
-            if (transform.position.x >= maxX)
-                movingRight = false; 
+            normalMovement.Move(transform, moveSpeed);
         }
-        else
+        else if (movement is FastMovement fastMovement)
         {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-
-            if (transform.position.x <= minX)
-                movingRight = true; 
+            fastMovement.Move(transform, moveSpeed);
+        }
+        else if (movement is SlowMovement slowMovement)
+        {
+            slowMovement.Move(transform, moveSpeed);
         }
     }
+
     public void HitTarget()
     {
-        gameObject.SetActive(false);  
-        Invoke("Respawn", 0.5f); 
+        gameObject.SetActive(false);
+        Invoke("Respawn", 0.5f);
     }
 
     private void Respawn()
     {
         float randomX = Random.Range(respawnRangeX.x, respawnRangeX.y);
-        float randomY = Random.Range(respawnRangeY.x, respawnRangeY.y);  
-
-        transform.position = new Vector3(randomX, randomY, respawnZ);  
-        gameObject.SetActive(true);  
+        float randomY = Random.Range(respawnRangeY.x, respawnRangeY.y);
+        transform.position = new Vector3(randomX, randomY, respawnZ);
+        gameObject.SetActive(true);
     }
 
     public void OnHitByRaycast()
     {
-        HitTarget(); 
+        HitTarget();
+    }
+    public void ChangeMovementType(string type)
+    {
+        movement = MovementFactory.CreateMovement(type, minX, maxX);
     }
 }
