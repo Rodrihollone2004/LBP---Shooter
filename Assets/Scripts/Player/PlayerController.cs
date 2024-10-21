@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask placementLayer; 
     [SerializeField] private Material graffitiMaterial; 
 
-    void Start()
+    void Awake()
     {
         characterController = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
