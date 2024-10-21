@@ -27,6 +27,7 @@ public class WeaponPistol : MonoBehaviour, IWeapon
 
     public void WeaponController()
     {
+        Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.forward * 200, Color.red);
         if (canShoot && Input.GetButtonDown("Fire1"))
         {
             if (bulletPistolCount > 0)
