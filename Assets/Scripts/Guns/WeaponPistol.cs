@@ -89,7 +89,7 @@ public class WeaponPistol : MonoBehaviour, IWeapon
             {
                 Vector3 impactPosition = hit.point + hit.normal * 0.01f;
                 GameObject impactEffect = Instantiate(impactPrefab, impactPosition, Quaternion.LookRotation(hit.normal));
-                impactEffect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                impactEffect.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 StartCoroutine(DestroyImpactAfterDelay(impactEffect, 1f));
             }
 
