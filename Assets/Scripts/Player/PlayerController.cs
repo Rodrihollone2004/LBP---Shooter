@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private float verticalVelocity;
     public float VerticalVelocity { get => verticalVelocity; set => verticalVelocity = value; }
 
-
+    [Header("WallRunning")]
     [SerializeField] private LayerMask wallLayer;
     private float wallCheckDistance = 2f;
     private bool isWallRunning;
@@ -31,6 +31,12 @@ public class PlayerController : MonoBehaviour
     public bool IsWallRunning { get => isWallRunning; set => isWallRunning = value; }
 
     public RaycastHit wallHit;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip runSound;
+    private AudioSource audioSource;
+
+    public bool hasLanded;
 
     [Header("Graffiti Settings")]
     [SerializeField] private Texture graffitiTexture;
@@ -42,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        audioSource = GetComponent<AudioSource>();
         mainCamera = GetComponentInChildren<Camera>();
 
         currentState = new WalkingState();
@@ -53,6 +60,35 @@ public class PlayerController : MonoBehaviour
         currentState.UpdateState(this);
 
         HandleGraffitiPlacement();
+
+        Debug.Log($"IsGrounded: {characterController.isGrounded}");
+
+        if (playerInput.IsRunning)
+        {
+            PlayRunSound();
+        }
+        else
+        {
+            StopRunSound();
+        }
+    }
+
+    private void PlayRunSound()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = runSound;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+    }
+
+    private void StopRunSound()
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 
     private void HandleGraffitiPlacement()
@@ -106,6 +142,8 @@ public class PlayerController : MonoBehaviour
             return characterController.isGrounded;
         }
     }
+
+
 
     public void AdjustCrouchHeight(float targetHeight)
     {

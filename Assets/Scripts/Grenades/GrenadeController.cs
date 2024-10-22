@@ -27,12 +27,12 @@ public class GrenadeController : MonoBehaviour
 
     private void SelectionGrenades()
     {
-        if (Input.GetKeyDown("3"))
+        if (Input.GetKeyDown("4"))
         {
             Debug.Log("Flashbang");
             SetGrenade(flashbang);
         }
-        else if (Input.GetKeyDown("4"))
+        else if (Input.GetKeyDown("5"))
         {
             Debug.Log("Smoke");
             SetGrenade(smoke);

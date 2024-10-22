@@ -5,6 +5,7 @@ public class PlayerShooting : MonoBehaviour
 {
     WeaponAK weaponAK;
     WeaponPistol weaponPistol;
+    WeaponKnife weaponKnife; 
 
     IWeapon weapon;
 
@@ -12,6 +13,7 @@ public class PlayerShooting : MonoBehaviour
     {
         weaponPistol = FindObjectOfType<WeaponPistol>();
         weaponAK = FindObjectOfType<WeaponAK>();
+        weaponKnife = FindObjectOfType<WeaponKnife>(); 
     }
 
     private void Start()
@@ -38,6 +40,11 @@ public class PlayerShooting : MonoBehaviour
         else if (Input.GetKeyDown("2"))
         {
             SetWeapon(weaponAK);
+            weapon.UpdateBulletsCount();
+        }
+        else if (Input.GetKeyDown("3")) 
+        {
+            SetWeapon(weaponKnife); 
             weapon.UpdateBulletsCount();
         }
     }
