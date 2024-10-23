@@ -36,8 +36,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip runSound;
     private AudioSource audioSource;
 
-    public bool hasLanded;
-
     [Header("Graffiti Settings")]
     [SerializeField] private Texture graffitiTexture;
     [SerializeField] private float graffitiSize = 1f;
