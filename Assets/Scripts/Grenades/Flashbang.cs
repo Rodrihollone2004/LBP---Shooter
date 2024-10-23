@@ -44,7 +44,7 @@ public class Flashbang : MonoBehaviour, IGrenade
 
     public IEnumerator GrenadeController()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1f);
 
         Flashbang flashbang = this;
 
@@ -70,7 +70,7 @@ public class Flashbang : MonoBehaviour, IGrenade
                 for (int i = 0; WhiteImage.color.a > 0; i++)
                 {
                     WhiteImage.color = new Vector4(1, 1, 1, FadeSpeed);
-                    FadeSpeed = FadeSpeed - 0.025f;
+                    FadeSpeed = FadeSpeed - 0.10f;
                     Modifier = Modifier * 1.5f;
                     WaitTime = 0.5f - Modifier;
                     if (WaitTime < 0.1f) WaitTime = 0.1f;
