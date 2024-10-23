@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     public bool IsWallRunning { get => isWallRunning; set => isWallRunning = value; }
 
     public RaycastHit wallHit;
-    [SerializeField] private LayerMask groundLayer; 
 
     [Header("Sounds")]
     [SerializeField] private AudioClip runSound;
@@ -133,7 +132,6 @@ public class PlayerController : MonoBehaviour
             verticalVelocity += gravity * Time.deltaTime;
         }
     }
-
 
     public bool IsGrounded
     {
