@@ -59,8 +59,6 @@ public class PlayerController : MonoBehaviour
 
         HandleGraffitiPlacement();
 
-        Debug.Log($"IsGrounded: {characterController.isGrounded}");
-
         if (playerInput.IsRunning)
         {
             PlayRunSound();
