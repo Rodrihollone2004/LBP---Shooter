@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public bool IsWallRunning { get => isWallRunning; set => isWallRunning = value; }
 
     public RaycastHit wallHit;
+    [SerializeField] private LayerMask groundLayer; 
 
     [Header("Sounds")]
     [SerializeField] private AudioClip runSound;
@@ -129,10 +130,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            verticalVelocity += gravity * Time.deltaTime; 
+            verticalVelocity += gravity * Time.deltaTime;
         }
     }
-
 
 
     public bool IsGrounded
@@ -141,9 +141,8 @@ public class PlayerController : MonoBehaviour
         {
             return characterController.isGrounded;
         }
+        set { }
     }
-
-
 
     public void AdjustCrouchHeight(float targetHeight)
     {
