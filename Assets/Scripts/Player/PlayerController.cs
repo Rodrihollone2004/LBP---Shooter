@@ -139,7 +139,6 @@ public class PlayerController : MonoBehaviour
         {
             return characterController.isGrounded;
         }
-        set { }
     }
 
     public void AdjustCrouchHeight(float targetHeight)
