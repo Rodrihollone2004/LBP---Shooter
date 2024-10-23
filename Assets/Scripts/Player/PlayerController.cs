@@ -114,15 +114,15 @@ public class PlayerController : MonoBehaviour
 
     public void CalculateVertical()
     {
-        if (IsGrounded)
+        if (characterController.isGrounded)
         {
             if (playerInput.IsJumping)
             {
-                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);  
             }
             else
             {
-                verticalVelocity = 0;
+                verticalVelocity = -0.5f;  
             }
         }
         else
@@ -130,6 +130,7 @@ public class PlayerController : MonoBehaviour
             verticalVelocity += gravity * Time.deltaTime;
         }
     }
+
 
     public bool IsGrounded
     {
