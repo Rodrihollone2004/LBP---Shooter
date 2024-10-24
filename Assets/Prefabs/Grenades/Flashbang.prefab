@@ -5007,5 +5007,5 @@ MonoBehaviour:
   objectToThrow: {fileID: 5425807012612619997}
   throwForce: 15
   throwUpwardForce: 0
-  totalThrows: 85
+  totalThrows: 45
   throwCoolDown: 0.1

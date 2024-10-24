@@ -10,6 +10,7 @@ public class Smoke: MonoBehaviour, IGrenade
 
     [Header("Setting Throw Item")]
     [SerializeField] KeyCode throwKey = KeyCode.M;
+    [SerializeField] LayerMask explosionLayers;
 
     private Camera mainCamera;
     [SerializeField] GameObject objectToThrow; 
@@ -40,14 +41,7 @@ public class Smoke: MonoBehaviour, IGrenade
     public IEnumerator GrenadeController()
     {
         yield return new WaitForSeconds(4f);
-
-        Smoke smoke = this;
-
-        if (smoke != null)
-        {
-            SmokeParticle.Play();
-            Renderer.enabled = false;
-        }
+        TriggerExplosion();
     }
 
     public void Throw()
@@ -55,7 +49,6 @@ public class Smoke: MonoBehaviour, IGrenade
         if (objectToThrow != null && ReadyToThrow)
         {
             GameObject thrownObject = Instantiate(objectToThrow, MainCamera.transform.position + MainCamera.transform.forward, Quaternion.identity);
-
             Rigidbody rb = thrownObject.GetComponent<Rigidbody>();
 
             if (rb != null)
@@ -66,7 +59,6 @@ public class Smoke: MonoBehaviour, IGrenade
             }
 
             totalThrows--; 
-
             Invoke(nameof(ResetThrow), throwCoolDown);
         }
     }
@@ -82,5 +74,19 @@ public class Smoke: MonoBehaviour, IGrenade
         {
             Throw();
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (((1 << collision.gameObject.layer) & explosionLayers) != 0)
+        {
+            TriggerExplosion();
+        }
+    }
+
+    private void TriggerExplosion()
+    {
+        SmokeParticle.Play();
+        Renderer.enabled = false;
+        Destroy(gameObject, SmokeParticle.main.duration); 
     }
 }

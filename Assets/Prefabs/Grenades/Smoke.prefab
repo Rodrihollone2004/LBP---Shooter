@@ -5004,8 +5004,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwKey: 109
+  explosionLayers:
+    serializedVersion: 2
+    m_Bits: 8
   objectToThrow: {fileID: 5425807012612619997}
   throwForce: 15
   throwUpwardForce: 0
-  totalThrows: 100
+  totalThrows: 96
   throwCoolDown: 0.1

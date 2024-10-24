@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private Color zeroHealthColor = Color.red;
     [SerializeField] private GameObject damageTextPrefab;
     [SerializeField] private AudioClip damageSound;
+    [SerializeField] private bool isImmortal = false;
     private AudioSource audioSource;
 
     private float currentHealth;
@@ -23,14 +24,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void DealDamage(int damage, Vector3 originPosition)
     {
+        ShowDamageEffects(damage);
+
+        if (isImmortal) return;
+
         currentHealth -= damage;
-
-        if (damageSound != null)
-        {
-            audioSource.PlayOneShot(damageSound);
-        }
-
-        Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageText>().Initialise(damage);
 
         if (currentHealth < 0)
         {
@@ -40,6 +38,16 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         SetHealthbarUi();
 
         CheckIfDead();
+    }
+
+    private void ShowDamageEffects(int damage)
+    {
+        if (damageSound != null)
+        {
+            audioSource.PlayOneShot(damageSound);
+        }
+
+        Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageText>().Initialise(damage);
     }
 
     private void CheckIfDead()

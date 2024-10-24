@@ -66,7 +66,9 @@ public class WeaponPistol : MonoBehaviour, IWeapon
         Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        int layerMask = ~(1 << LayerMask.NameToLayer("NoHit"));
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             if (hit.collider.CompareTag("Target"))  
             {
