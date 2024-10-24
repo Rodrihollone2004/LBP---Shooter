@@ -5,7 +5,7 @@ using System.Collections;
 public class WeaponAK : MonoBehaviour, IWeapon
 {
     [SerializeField] private TextMeshProUGUI bulletAkCountText;
-    [SerializeField] private int damageAk = 5;
+    [SerializeField] private int damageAk = 40;
     [SerializeField] private float shootCooldown = 0.1f;
     [Header("Sounds")]
     [SerializeField] private AudioClip shootSoundAk;
@@ -23,7 +23,7 @@ public class WeaponAK : MonoBehaviour, IWeapon
 
     private void Awake()
     {
-        bulletAkCount = 20;
+        bulletAkCount = 30;
         mainCamera = Camera.main;
         audioSource = GetComponent<AudioSource>();
     }
@@ -59,7 +59,7 @@ public class WeaponAK : MonoBehaviour, IWeapon
         canShoot = false;
         yield return new WaitForSeconds(2.4f);
 
-        bulletAkCount = 20;
+        bulletAkCount = 30;
         canShoot = true;
         UpdateBulletsCount();
     }
@@ -118,6 +118,6 @@ public class WeaponAK : MonoBehaviour, IWeapon
 
     public void UpdateBulletsCount()
     {
-        bulletAkCountText.text = bulletAkCount.ToString() + " / 50";
+        bulletAkCountText.text = bulletAkCount.ToString() + " / 30";
     }
 }

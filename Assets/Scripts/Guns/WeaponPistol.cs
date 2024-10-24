@@ -20,7 +20,7 @@ public class WeaponPistol : MonoBehaviour, IWeapon
 
     private void Awake()
     {
-        bulletPistolCount = 20;
+        bulletPistolCount = 12;
         mainCamera = Camera.main;
         audioSource = GetComponent<AudioSource>();
     }
@@ -56,7 +56,7 @@ public class WeaponPistol : MonoBehaviour, IWeapon
         canShoot = false;
         yield return new WaitForSeconds(2.4f);
 
-        bulletPistolCount = 20;
+        bulletPistolCount = 12;
         canShoot = true;
         UpdateBulletsCount();
     }
@@ -116,6 +116,6 @@ public class WeaponPistol : MonoBehaviour, IWeapon
 
     public void UpdateBulletsCount()
     {
-        bulletPistolCountText.text = bulletPistolCount.ToString() + " / 50";
+        bulletPistolCountText.text = bulletPistolCount.ToString() + " / 12";
     }
 }
