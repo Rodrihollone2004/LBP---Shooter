@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1162,7 +1162,7 @@ PrefabInstance:
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
@@ -2726,7 +2726,7 @@ PrefabInstance:
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
@@ -4413,6 +4413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1771355966}
+  - component: {fileID: 1771355967}
   m_Layer: 0
   m_Name: Enemys
   m_TagString: Untagged
@@ -4440,6 +4441,24 @@ Transform:
   - {fileID: 1886601575}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1771355967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771355965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3c5714d102be7458eb8b173cccf422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  xRayLayer:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!1 &1785069951
 GameObject:
   m_ObjectHideFlags: 0
@@ -4673,7 +4692,7 @@ PrefabInstance:
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
@@ -4832,7 +4851,7 @@ PrefabInstance:
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
@@ -5766,7 +5785,7 @@ PrefabInstance:
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1272605685895504472, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
