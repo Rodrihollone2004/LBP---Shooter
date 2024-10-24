@@ -18,6 +18,7 @@ public class PlayerHealth: MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         Debug.Log("Vida actual: " + currentHealth);
         UpdateHealthUI();
 
@@ -27,7 +28,6 @@ public class PlayerHealth: MonoBehaviour
         }
     }
 
-    // metodo por si queremos curar al jugador.
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
