@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         HandleGraffitiPlacement();
 
-        if (playerInput.IsRunning)
+        if (playerInput.IsRunning && IsGrounded && IsMoving())
         {
             PlayRunSound();
         }
@@ -67,6 +67,12 @@ public class PlayerController : MonoBehaviour
         {
             StopRunSound();
         }
+    }
+
+    private bool IsMoving()
+    {
+        Vector3 horizontalMove = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        return horizontalMove.magnitude > 0.1f;
     }
 
     private void PlayRunSound()
