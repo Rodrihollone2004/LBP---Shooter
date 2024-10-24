@@ -36,18 +36,21 @@ public class PlayerShooting : MonoBehaviour
         InputWeapons();
 
 
-        if (Input.GetMouseButton(1))
+        if (ReferenceEquals(weapon, weaponPistol) || ReferenceEquals(weapon, weaponAK))
         {
-            if (!isZoomed)
+            if (Input.GetMouseButton(1))
             {
-                ToggleZoom(true); 
+                if (!isZoomed)
+                {
+                    ToggleZoom(true);
+                }
             }
-        }
-        else
-        {
-            if (isZoomed)
+            else
             {
-                ToggleZoom(false); 
+                if (isZoomed)
+                {
+                    ToggleZoom(false);
+                }
             }
         }
 
@@ -96,6 +99,11 @@ public class PlayerShooting : MonoBehaviour
         {
             SetWeapon(weaponKnife); 
             weapon.UpdateBulletsCount();
+
+            if (isZoomed)
+            {
+                ToggleZoom(false);
+            }
         }
     }
 
