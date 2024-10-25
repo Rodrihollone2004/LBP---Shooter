@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerHealth: MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerHealth: MonoBehaviour
     private int currentHealth;
 
     [SerializeField] private TMP_Text healthText;
+
+    public event Action<int> OnHealthChanged;
 
     void Start()
     {
@@ -22,6 +25,8 @@ public class PlayerHealth: MonoBehaviour
         Debug.Log("Vida actual: " + currentHealth);
         UpdateHealthUI();
 
+        OnHealthChanged?.Invoke(currentHealth);
+
         if (currentHealth <= 0)
         {
             Die();
@@ -34,6 +39,8 @@ public class PlayerHealth: MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         Debug.Log("Vida actual después de curarse: " + currentHealth);
         UpdateHealthUI();
+
+        OnHealthChanged?.Invoke(currentHealth);
     }
 
     private void Die()
