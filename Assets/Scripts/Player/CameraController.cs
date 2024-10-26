@@ -1,17 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField] public float sensitivity = 100f;
     private float xRot = 0f;
+    private float tilt = 0f;
     [SerializeField] public Transform playerBody;
+    [SerializeField] public PlayerController playerController;
 
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        playerController = FindObjectOfType<PlayerController>();
     }
     void Update()
     {
@@ -21,6 +22,17 @@ public class CameraController : MonoBehaviour
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, -45, 45);
 
-        transform.localRotation = Quaternion.Euler(xRot, transform.localRotation.eulerAngles.y + mouseX, 0f);
+        if (playerController.IsWallRunning)
+        {
+            float tiltDirection = Vector3.Dot(playerController.wallHit.normal, playerBody.right) > 0 ? -1 : 1;
+            tilt = Mathf.Lerp(tilt, playerController.WallRunCameraTilt * tiltDirection, Time.deltaTime * 5f);
+        }
+        else
+        {
+            tilt = Mathf.Lerp(tilt, 0, Time.deltaTime * 5f);
+        }
+
+        transform.localRotation = Quaternion.Euler(xRot, 0f, tilt);
+        playerBody.Rotate(Vector3.up * mouseX);
     }
 }

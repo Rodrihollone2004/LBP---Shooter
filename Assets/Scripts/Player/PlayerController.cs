@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,7 +25,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     private float wallCheckDistance = 2f;
     private bool isWallRunning;
+    [SerializeField] private float wallRunCameraTilt = 15f;
 
+    [SerializeField] private float impulseAngle = 1.2f; //ajustar el impulso más hacia arriba
+    [SerializeField] private float impulseSideWall = 10f; // ajustar la fuerza de impulso para el lado contrario de la pared
+
+    public float WallRunCameraTilt { get => wallRunCameraTilt; set => wallRunCameraTilt = value; }
     public bool IsWallRunning { get => isWallRunning; set => isWallRunning = value; }
 
     public RaycastHit wallHit;
@@ -144,6 +147,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     public void AdjustCrouchHeight(float targetHeight)
     {
         float targetLocalScaleY = playerInput.IsCrouch ? 0.65f : 1f;
@@ -154,19 +158,26 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 position = transform.position + Vector3.up * 0.5f;
 
-        bool touchingWall = Physics.Raycast(position, mainCamera.transform.right, out wallHit, wallCheckDistance, wallLayer) || // Derecha
-                            Physics.Raycast(position, -mainCamera.transform.right, out wallHit, wallCheckDistance, wallLayer) || // Izquierda
-                            Physics.Raycast(position, mainCamera.transform.forward, out wallHit, wallCheckDistance, wallLayer) || // Frontal
-                            Physics.Raycast(position, -mainCamera.transform.forward, out wallHit, wallCheckDistance, wallLayer); // Detrás
+        bool touchingWall = Physics.Raycast(position, mainCamera.transform.right, out wallHit, wallCheckDistance, wallLayer) ||
+                            Physics.Raycast(position, -mainCamera.transform.right, out wallHit, wallCheckDistance, wallLayer);
 
-
-        Debug.DrawRay(position, mainCamera.transform.right * wallCheckDistance, Color.red); 
+        Debug.DrawRay(position, mainCamera.transform.right * wallCheckDistance, Color.red);
         Debug.DrawRay(position, -mainCamera.transform.right * wallCheckDistance, Color.green);
-        Debug.DrawRay(position, mainCamera.transform.forward * wallCheckDistance, Color.blue); 
-        Debug.DrawRay(position, -mainCamera.transform.forward * wallCheckDistance, Color.yellow);
 
         return touchingWall;
     }
+
+    public void JumpOffWall()
+    {
+        Vector3 jumpDirection = (wallHit.normal + Vector3.up * impulseAngle).normalized;
+
+        verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+        characterController.Move(jumpDirection * runSpeed * impulseSideWall * Time.deltaTime); 
+
+        TransitionToState(new JumpingState());
+    }
+
     private void PlaceGraffiti()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
