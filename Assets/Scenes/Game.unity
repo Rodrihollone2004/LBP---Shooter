@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1264,6 +1264,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
+        type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 170f23b8fb67ea5429c4ffa5ef2e4d12,
+        type: 2}
     - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: damageSound
@@ -2686,6 +2692,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
+        type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 170f23b8fb67ea5429c4ffa5ef2e4d12,
+        type: 2}
     - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: damageSound
@@ -4776,6 +4788,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 170f23b8fb67ea5429c4ffa5ef2e4d12,
+        type: 2}
+    - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
+        type: 3}
       propertyPath: damageSound
       value: 
       objectReference: {fileID: 8300000, guid: 99af03ccbfac35a47ad378365c2fdd9f, type: 3}
@@ -4933,6 +4951,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
+        type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 170f23b8fb67ea5429c4ffa5ef2e4d12,
+        type: 2}
     - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: damageSound
@@ -5872,6 +5896,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
+        type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 170f23b8fb67ea5429c4ffa5ef2e4d12,
+        type: 2}
     - target: {fileID: 6286265499119184516, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
         type: 3}
       propertyPath: isImmortal

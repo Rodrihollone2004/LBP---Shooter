@@ -6,11 +6,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private Slider healthbarSlider;
     [SerializeField] private Image healthbarFillImage;
-    [SerializeField] private Color maxHealthColor = Color.green;
-    [SerializeField] private Color zeroHealthColor = Color.red;
-    [SerializeField] private GameObject damageTextPrefab;
     [SerializeField] private AudioClip damageSound;
     [SerializeField] private bool isImmortal = false;
+    [SerializeField] private EnemyData enemyData;
     private AudioSource audioSource;
 
     private float currentHealth;
@@ -47,7 +45,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             audioSource.PlayOneShot(damageSound);
         }
 
-        Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageText>().Initialise(damage);
+        Instantiate(enemyData.damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageText>().Initialise(damage);
     }
 
     private void CheckIfDead()
@@ -62,7 +60,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         float healthPercentage = CalculateHealthPercentage();
         healthbarSlider.value = healthPercentage;
-        healthbarFillImage.color = Color.Lerp(zeroHealthColor, maxHealthColor, healthPercentage / 100f);
+        healthbarFillImage.color = Color.Lerp(enemyData.zeroHealthColor, enemyData.maxHealthColor, healthPercentage / 100f);
     }
 
     private float CalculateHealthPercentage()
