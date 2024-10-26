@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        sensitivity = PlayerPrefs.GetFloat("CameraSensitivity", sensitivity);
         Cursor.lockState = CursorLockMode.Locked;
         playerController = FindObjectOfType<PlayerController>();
     }
