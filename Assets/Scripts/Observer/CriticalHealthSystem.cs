@@ -14,6 +14,6 @@ public class CriticalHealthSystem : MonoBehaviour, IHealthObserver
     }
     public void OnHealthChanged(int newHealth)
     {
-        imageCritical.enabled = newHealth < 20 ? true : false;
+        imageCritical.enabled = newHealth < 50 ? true : false;
     }
 }
