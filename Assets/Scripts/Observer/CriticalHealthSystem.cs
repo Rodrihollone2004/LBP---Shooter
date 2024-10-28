@@ -7,6 +7,9 @@ public class CriticalHealthSystem : MonoBehaviour, IHealthObserver
 {
     [SerializeField] private Image imageCritical;
     [SerializeField] private PlayerHealth health;
+    [SerializeField] private float blinkInterval = 0.5f;
+
+    private Coroutine blinkCoroutine;
 
     private void Awake()
     {
@@ -14,6 +17,30 @@ public class CriticalHealthSystem : MonoBehaviour, IHealthObserver
     }
     public void OnHealthChanged(int newHealth)
     {
-        imageCritical.enabled = newHealth < 50 ? true : false;
+        if (newHealth < 50)
+        {
+            if (blinkCoroutine == null)
+            {
+                blinkCoroutine = StartCoroutine(BlinkImage());
+            }
+        }
+        else
+        {
+            if (blinkCoroutine != null)
+            {
+                StopCoroutine(blinkCoroutine);
+                blinkCoroutine = null;
+                imageCritical.enabled = false;
+            }
+        }
+    }
+
+    private IEnumerator BlinkImage()
+    {
+        while (true)
+        {
+            imageCritical.enabled = !imageCritical.enabled;
+            yield return new WaitForSeconds(blinkInterval);
+        }
     }
 }
