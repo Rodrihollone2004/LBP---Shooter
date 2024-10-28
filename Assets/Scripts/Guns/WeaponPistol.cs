@@ -116,6 +116,6 @@ public class WeaponPistol : MonoBehaviour, IWeapon
 
     public void UpdateBulletsCount()
     {
-        bulletPistolCountText.text = bulletPistolCount.ToString() + " / 12";
+        bulletPistolCountText.text = $"{bulletPistolCount.ToString()} <size=50%>12</size>";
     }
 }

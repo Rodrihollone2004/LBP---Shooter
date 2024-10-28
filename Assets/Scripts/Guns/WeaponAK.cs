@@ -118,6 +118,6 @@ public class WeaponAK : MonoBehaviour, IWeapon
 
     public void UpdateBulletsCount()
     {
-        bulletAkCountText.text = bulletAkCount.ToString() + " / 30";
+        bulletAkCountText.text = $"{bulletAkCount.ToString()} <size=50%>30</size>";
     }
 }
