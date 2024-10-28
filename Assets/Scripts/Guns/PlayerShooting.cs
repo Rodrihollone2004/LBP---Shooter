@@ -1,8 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
+    [SerializeField] private Image pistolIcon;
+    [SerializeField] private Image akIcon;
+    [SerializeField] private Image knifeIcon;
+
     WeaponAK weaponAK;
     WeaponPistol weaponPistol;
     WeaponKnife weaponKnife; 
@@ -26,9 +31,11 @@ public class PlayerShooting : MonoBehaviour
 
     private void Start()
     {
-        weapon = weaponPistol;
+        weapon = weaponAK;
 
         weapon.UpdateBulletsCount();
+
+        UpdateWeaponIcon();
     }
 
     private void Update()
@@ -87,12 +94,12 @@ public class PlayerShooting : MonoBehaviour
     {
         if (Input.GetKeyDown("1"))
         {
-            SetWeapon(weaponPistol);
+            SetWeapon(weaponAK);
             weapon.UpdateBulletsCount();
         }
         else if (Input.GetKeyDown("2"))
         {
-            SetWeapon(weaponAK);
+            SetWeapon(weaponPistol);
             weapon.UpdateBulletsCount();
         }
         else if (Input.GetKeyDown("3")) 
@@ -110,5 +117,26 @@ public class PlayerShooting : MonoBehaviour
     public void SetWeapon(IWeapon weapon)
     {
         this.weapon = weapon;
+        UpdateWeaponIcon();
+    }
+
+    private void UpdateWeaponIcon()
+    {
+        pistolIcon.color = Color.gray;
+        akIcon.color = Color.gray;
+        knifeIcon.color = Color.gray;
+
+        if (ReferenceEquals(weapon, weaponPistol))
+        {
+            pistolIcon.color = Color.white;
+        }
+        else if (ReferenceEquals(weapon, weaponAK))
+        {
+            akIcon.color = Color.white;
+        }
+        else if (ReferenceEquals(weapon, weaponKnife))
+        {
+            knifeIcon.color = Color.white;
+        }
     }
 }
