@@ -4,14 +4,16 @@ public class PlayerController : MonoBehaviour
 {
     private IState currentState;
     public PlayerInput playerInput;
-    private CharacterController characterController;
     private Camera mainCamera;
+    private Rigidbody rb;
 
     private float walkSpeed = 5f;
     private float runSpeed = 10f;
     private float crouchSpeed = 2.5f;
     private float jumpHeight = 1.25f;
     private float gravity = -9.81f;
+    private Vector3 velocity;
+    [SerializeField] private LayerMask groundLayer;
     public float WalkSpeed { get => walkSpeed; set => walkSpeed = value; }
     public float RunSpeed { get => runSpeed; set => runSpeed = value; }
     public float CrouchSpeed { get => crouchSpeed; set => crouchSpeed = value; }
@@ -47,10 +49,11 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        characterController = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         audioSource = GetComponent<AudioSource>();
         mainCamera = GetComponentInChildren<Camera>();
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
 
         currentState = new WalkingState();
         currentState.EnterState(this);
@@ -59,10 +62,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
-
         HandleGraffitiPlacement();
-
-        if (playerInput.IsRunning && IsGrounded && IsMoving())
+        if (playerInput.IsRunning && IsGrounded() && IsMoving())
         {
             PlayRunSound();
         }
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             StopRunSound();
         }
+        Move();
     }
 
     private bool IsMoving()
@@ -111,42 +113,38 @@ public class PlayerController : MonoBehaviour
         currentState.EnterState(this);
     }
 
-    public void Move(Vector3 direction, float speed)
+    public void Move()
     {
+        float speed = playerInput.IsRunning ? runSpeed : walkSpeed;
+        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         Vector3 move = mainCamera.transform.forward * direction.z + mainCamera.transform.right * direction.x;
         move.y = 0;
-        characterController.Move(move * speed * Time.deltaTime);
-        characterController.Move(new Vector3(0, verticalVelocity, 0) * Time.deltaTime);
-    }
 
-    public void CalculateVertical()
-    {
-        if (characterController.isGrounded)
+        rb.MovePosition(rb.position + move.normalized * speed * Time.deltaTime);
+
+        if (IsGrounded())
         {
+            if (velocity.y < 0)
+            {
+                velocity.y = -0f;
+            }
+
             if (playerInput.IsJumping)
             {
-                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);  
-            }
-            else
-            {
-                verticalVelocity = -0.5f;  
+                velocity.y = Mathf.Sqrt(JumpHeight * -2f * gravity);
             }
         }
         else
         {
-            verticalVelocity += gravity * Time.deltaTime;
+            velocity.y += gravity * Time.deltaTime;
         }
+        rb.MovePosition(rb.position + new Vector3(0, velocity.y, 0) * Time.deltaTime);
     }
 
-
-    public bool IsGrounded
+    public bool IsGrounded()
     {
-        get
-        {
-            return characterController.isGrounded;
-        }
+        return Physics.Raycast(transform.position, Vector3.down, 1.1f, groundLayer);
     }
-
 
     public void AdjustCrouchHeight(float targetHeight)
     {
@@ -170,11 +168,8 @@ public class PlayerController : MonoBehaviour
     public void JumpOffWall()
     {
         Vector3 jumpDirection = (wallHit.normal + Vector3.up * impulseAngle).normalized;
-
-        verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
-
-        characterController.Move(jumpDirection * runSpeed * impulseSideWall * Time.deltaTime); 
-
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        rb.MovePosition(rb.position + jumpDirection * runSpeed * impulseSideWall * Time.deltaTime);
         TransitionToState(new JumpingState());
     }
 

@@ -15,7 +15,7 @@ public class CrouchingState : IState
         Vector3 inputVector = player.playerInput.InputVector;
         Vector3 moveDirection = new Vector3(inputVector.x, 0, inputVector.z).normalized;
 
-        player.Move(moveDirection, player.CrouchSpeed);
+        player.Move();
 
         if (!player.playerInput.IsCrouch)
         {

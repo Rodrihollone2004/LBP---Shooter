@@ -17,7 +17,7 @@ public class WallRunningState : IState
 
             Vector3 moveDirection = Vector3.Dot(player.transform.forward, wallRight) > 0 ? wallRight : wallLeft;
 
-            player.Move(moveDirection, player.RunSpeed);
+            player.Move();
 
             player.VerticalVelocity += player.Gravity * 0.1f * Time.deltaTime;
 

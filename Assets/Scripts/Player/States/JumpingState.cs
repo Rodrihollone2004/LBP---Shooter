@@ -10,15 +10,14 @@ public class JumpingState : IState
 
     public void UpdateState(PlayerController player)
     {
-        player.CalculateVertical(); 
 
         Vector3 inputVector = player.playerInput.InputVector;
         Vector3 moveDirection = new Vector3(inputVector.x, 0, inputVector.z).normalized;
 
         float speed = player.playerInput.IsRunning ? player.RunSpeed : player.WalkSpeed;
-        player.Move(moveDirection, speed);
+        player.Move();
 
-        if (player.IsGrounded)
+        if (player.IsGrounded())
         {
             player.TransitionToState(new WalkingState());
         }

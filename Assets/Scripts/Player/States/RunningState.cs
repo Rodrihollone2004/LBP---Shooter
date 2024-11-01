@@ -10,14 +10,13 @@ public class RunningState : IState
 
     public void UpdateState(PlayerController player)
     {
-        player.CalculateVertical();
 
         Vector3 inputVector = player.playerInput.InputVector;
         Vector3 moveDirection = new Vector3(inputVector.x, 0, inputVector.z).normalized;
 
-        player.Move(moveDirection, player.RunSpeed);
+        player.Move();
 
-        if (player.IsGrounded)
+        if (player.IsGrounded())
         {
             player.VerticalVelocity = 0;
 
