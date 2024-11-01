@@ -9,14 +9,13 @@ public class PlayerController : MonoBehaviour
 
     private float walkSpeed = 5f;
     private float runSpeed = 10f;
-    private float crouchSpeed = 2.5f;
     private float jumpHeight = 1.25f;
     private float gravity = -9.81f;
     private Vector3 velocity;
     [SerializeField] private LayerMask groundLayer;
+    public Vector3 Velocity { get => velocity; set => velocity = value; }
     public float WalkSpeed { get => walkSpeed; set => walkSpeed = value; }
     public float RunSpeed { get => runSpeed; set => runSpeed = value; }
-    public float CrouchSpeed { get => crouchSpeed; set => crouchSpeed = value; }
     public float JumpHeight { get => jumpHeight; set => jumpHeight = value; }
     public float Gravity { get => gravity; set => gravity = value; }
 
