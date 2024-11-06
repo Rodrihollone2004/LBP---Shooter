@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: normalTarget
   m_EditorClassIdentifier: 
   speed: 3
-  life: 1
+  life: 2
