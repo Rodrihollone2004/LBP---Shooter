@@ -12,6 +12,8 @@ public class WeaponKnife : MonoBehaviour, IWeapon
     [Header("Hole")]
     [SerializeField] private LayerMask impactLayers;
     [SerializeField] private GameObject impactPrefab;
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem shootParticles;
     private AudioSource audioSource;
 
     private Camera mainCamera;
@@ -50,6 +52,7 @@ public class WeaponKnife : MonoBehaviour, IWeapon
 
             if ((impactLayers.value & (1 << hit.collider.gameObject.layer)) > 0)
             {
+                shootParticles.Play();
                 Vector3 impactPosition = hit.point + hit.normal * 0.01f;
                 GameObject impactEffect = Instantiate(impactPrefab, impactPosition, Quaternion.LookRotation(hit.normal));
                 impactEffect.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);

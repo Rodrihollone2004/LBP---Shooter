@@ -6,17 +6,20 @@ public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private Image pistolIcon;
     [SerializeField] private Image akIcon;
-    [SerializeField] private Image knifeIcon;
+    [SerializeField] private Image knifeIcon;    
+    
+    [SerializeField] private GameObject pistolObject;
+    [SerializeField] private GameObject akObject;
+    [SerializeField] private GameObject knifeObject;
 
     WeaponAK weaponAK;
     WeaponPistol weaponPistol;
     WeaponKnife weaponKnife; 
 
     IWeapon weapon;
-
     private Camera mainCamera;
     private float normalFieldOfView = 60f; 
-    private float zoomedFieldOfView = 30f; 
+    private float zoomedFieldOfView = 50f; 
     private bool isZoomed = false; 
     private Coroutine zoomCoroutine; 
 
@@ -114,9 +117,16 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    public void SetWeapon(IWeapon weapon)
+
+    private void SetWeapon(IWeapon newWeapon)
     {
-        this.weapon = weapon;
+        weapon = newWeapon;
+        weapon.UpdateBulletsCount();
+
+        akObject.SetActive(ReferenceEquals(weapon, weaponAK));
+        pistolObject.SetActive(ReferenceEquals(weapon, weaponPistol));
+        knifeObject.SetActive(ReferenceEquals(weapon, weaponKnife));
+
         UpdateWeaponIcon();
     }
 

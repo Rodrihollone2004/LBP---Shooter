@@ -12,6 +12,8 @@ public class WeaponPistol : MonoBehaviour, IWeapon
     [Header("ShootHole")]
     [SerializeField] private LayerMask impactLayers;
     [SerializeField] private GameObject impactPrefab;
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem shootParticles;
     private AudioSource audioSource;
 
     private int bulletPistolCount;
@@ -104,6 +106,7 @@ public class WeaponPistol : MonoBehaviour, IWeapon
             }
         }
         audioSource.PlayOneShot(shootSoundPistol);
+        shootParticles.Play();
     }
 
 

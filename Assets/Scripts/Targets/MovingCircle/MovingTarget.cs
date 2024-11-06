@@ -12,9 +12,9 @@ public class MovingTarget : MonoBehaviour
     [SerializeField] private TargetSpeed targetSpeed;
 
     [Header("Respawn")]
-    [SerializeField] private Vector2 respawnRangeX = new Vector2(-7f, 7f);
+    [SerializeField] private float respawnX = 63f;
     [SerializeField] private Vector2 respawnRangeY = new Vector2(1.5f, 3f);
-    [SerializeField] private float respawnZ = -10f;
+    [SerializeField] private Vector2 respawnRangeZ = new Vector2(22f, 36f);
     private int startLife;
 
     private void Start()
@@ -45,14 +45,14 @@ public class MovingTarget : MonoBehaviour
     {
         if (isMovingRight)
         {
-            transform.Translate(Vector3.right * (targetSpeed.speed) * Time.deltaTime);
-            if (transform.position.x >= maxX)
+            transform.Translate(Vector3.forward * (targetSpeed.speed) * Time.deltaTime);
+            if (transform.position.z >= maxX)
                 isMovingRight = false;
         }
         else
         {
-            transform.Translate(Vector3.left * (targetSpeed.speed) * Time.deltaTime);
-            if (transform.position.x <= minX)
+            transform.Translate(Vector3.back * (targetSpeed.speed) * Time.deltaTime);
+            if (transform.position.z <= minX)
                 isMovingRight = true;
         }
     }
@@ -66,9 +66,9 @@ public class MovingTarget : MonoBehaviour
 
     private void Respawn()
     {
-        float randomX = Random.Range(respawnRangeX.x, respawnRangeX.y);
+        float randomZ = Random.Range(respawnRangeZ.x, respawnRangeZ.y);
         float randomY = Random.Range(respawnRangeY.x, respawnRangeY.y);
-        transform.position = new Vector3(randomX, randomY, respawnZ);
+        transform.position = new Vector3(respawnX, randomY, randomZ);
         gameObject.SetActive(true);
     }
 

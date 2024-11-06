@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     private Camera mainCamera;
     private Rigidbody rb;
 
-    private float walkSpeed = 5f;
-    private float runSpeed = 10f;
+    private float walkSpeed = 3f;
+    private float runSpeed = 5f;
     private float jumpHeight = 1.25f;
     private float gravity = -9.81f;
     private Vector3 velocity;

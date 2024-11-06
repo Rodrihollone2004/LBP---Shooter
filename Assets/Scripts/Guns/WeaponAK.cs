@@ -13,6 +13,8 @@ public class WeaponAK : MonoBehaviour, IWeapon
     [Header("ShootHole")]
     [SerializeField] private LayerMask impactLayers; 
     [SerializeField] private GameObject impactPrefab;
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem shootParticles;
     private AudioSource audioSource;
 
     private int bulletAkCount;
@@ -108,6 +110,7 @@ public class WeaponAK : MonoBehaviour, IWeapon
         }
 
         audioSource.PlayOneShot(shootSoundAk);
+        shootParticles.Play();
     }
 
     private IEnumerator DestroyImpactAfterDelay(GameObject impactEffect, float delay)
