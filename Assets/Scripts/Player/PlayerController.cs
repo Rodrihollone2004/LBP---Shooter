@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -22,23 +23,20 @@ public class PlayerController : MonoBehaviour
     private float verticalVelocity;
     public float VerticalVelocity { get => verticalVelocity; set => verticalVelocity = value; }
 
-    [Header("WallRunning")]
-    [SerializeField] private LayerMask wallLayer;
-    private float wallCheckDistance = 2f;
-    private bool isWallRunning;
-    [SerializeField] private float wallRunCameraTilt = 15f;
-
-    [SerializeField] private float impulseAngle = 1.2f; //ajustar el impulso más hacia arriba
-    [SerializeField] private float impulseSideWall = 10f; // ajustar la fuerza de impulso para el lado contrario de la pared
-
-    public float WallRunCameraTilt { get => wallRunCameraTilt; set => wallRunCameraTilt = value; }
-    public bool IsWallRunning { get => isWallRunning; set => isWallRunning = value; }
-
-    public RaycastHit wallHit;
-
     [Header("Sounds")]
     [SerializeField] private AudioClip runSound;
     private AudioSource audioSource;
+
+    [Header("Dash Settings")]
+    [SerializeField] private float dashForce = 20f;
+    [SerializeField] private float dashUpwardForce = 2f;
+    [SerializeField] private float dashDuration = 0.2f;
+    public float DashDuration { get => dashDuration; set => dashDuration = value; }
+    [SerializeField] private float dashCooldown = 1f;
+    private float dashCooldownTimer;
+    public float DashCooldownTimer { get => dashCooldownTimer; }
+    private bool isDashing;
+    private Vector3 dashDirection;
 
     [Header("Graffiti Settings")]
     [SerializeField] private Texture graffitiTexture;
@@ -61,16 +59,76 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
+        HandleDashInput();
+
+        if (dashCooldownTimer > 0)
+        {
+            dashCooldownTimer -= Time.deltaTime;
+        }
+
         HandleGraffitiPlacement();
-        if (playerInput.IsRunning && IsGrounded() && IsMoving())
+
+        if (!isDashing)
         {
-            PlayRunSound();
+            Move();
+            if (playerInput.IsRunning && IsGrounded() && IsMoving())
+            {
+                PlayRunSound();
+            }
+            else
+            {
+                StopRunSound();
+            }
         }
-        else
+    }
+
+    private void HandleDashInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && dashCooldownTimer <= 0)
         {
-            StopRunSound();
+            if (!isDashing)
+            {
+                if (currentState is JumpingState)
+                {
+                    TransitionToState(new DashingState());
+                }
+                else if (currentState is WalkingState || currentState is RunningState)
+                {
+                    StartDash();
+                }
+            }
         }
-        Move();
+    }
+
+
+    public void StartDash()
+    {
+        isDashing = true;
+        dashCooldownTimer = dashCooldown;
+
+        Vector3 inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        dashDirection = mainCamera.transform.TransformDirection(inputDirection);
+
+        rb.useGravity = false;
+        rb.velocity = Vector3.zero; 
+
+        Vector3 dashVelocity = dashDirection * dashForce + Vector3.up * dashUpwardForce;
+        rb.AddForce(dashVelocity, ForceMode.Impulse);
+
+        rb.drag = 0f; 
+        rb.angularDrag = 0f;
+    }
+
+
+    public void EndDash()
+    {
+        isDashing = false;
+        rb.useGravity = true;
+
+        rb.drag = 5f;
+        rb.angularDrag = 5f;
+
+        dashDuration = 0.2f;
     }
 
     private bool IsMoving()
@@ -94,14 +152,6 @@ public class PlayerController : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
-        }
-    }
-
-    private void HandleGraffitiPlacement()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            PlaceGraffiti();
         }
     }
 
@@ -150,28 +200,13 @@ public class PlayerController : MonoBehaviour
         float targetLocalScaleY = playerInput.IsCrouch ? 0.65f : 1f;
         transform.localScale = new Vector3(1, targetHeight, 1);
     }
-
-    public bool IsTouchingWall()
+    private void HandleGraffitiPlacement()
     {
-        Vector3 position = transform.position + Vector3.up * 0.5f;
-
-        bool touchingWall = Physics.Raycast(position, mainCamera.transform.right, out wallHit, wallCheckDistance, wallLayer) ||
-                            Physics.Raycast(position, -mainCamera.transform.right, out wallHit, wallCheckDistance, wallLayer);
-
-        Debug.DrawRay(position, mainCamera.transform.right * wallCheckDistance, Color.red);
-        Debug.DrawRay(position, -mainCamera.transform.right * wallCheckDistance, Color.green);
-
-        return touchingWall;
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            PlaceGraffiti();
+        }
     }
-
-    public void JumpOffWall()
-    {
-        Vector3 jumpDirection = (wallHit.normal + Vector3.up * impulseAngle).normalized;
-        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        rb.MovePosition(rb.position + jumpDirection * runSpeed * impulseSideWall * Time.deltaTime);
-        TransitionToState(new JumpingState());
-    }
-
     private void PlaceGraffiti()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -181,15 +216,22 @@ public class PlayerController : MonoBehaviour
 
             Renderer quadRenderer = graffitiQuad.GetComponent<Renderer>();
             quadRenderer.material = graffitiMaterial;
-
             quadRenderer.material.mainTexture = graffitiTexture;
 
-            graffitiQuad.transform.position = hitInfo.point + hitInfo.normal * 0.01f; 
+            graffitiQuad.transform.position = hitInfo.point + hitInfo.normal * 0.01f;
             graffitiQuad.transform.rotation = Quaternion.LookRotation(hitInfo.normal);
             graffitiQuad.transform.localScale = new Vector3(graffitiSize, graffitiSize, 1f);
 
             Destroy(graffitiQuad.GetComponent<Collider>());
+
+            StartCoroutine(DestroyGraffitiAfterTime(graffitiQuad, 5f));
         }
     }
 
+    private IEnumerator DestroyGraffitiAfterTime(GameObject graffiti, float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        Destroy(graffiti);
+    }
 }

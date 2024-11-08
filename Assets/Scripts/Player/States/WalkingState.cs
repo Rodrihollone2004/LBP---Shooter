@@ -16,6 +16,11 @@ public class WalkingState : IState
 
         player.Move();
 
+        if (Input.GetKeyDown(KeyCode.E) && player.DashCooldownTimer <= 0)
+        {
+            player.TransitionToState(new DashingState());
+        }
+
         if (player.IsGrounded())
         {
             player.VerticalVelocity = 0;

@@ -99,8 +99,8 @@ public class ActivateTraining : MonoBehaviour
             isTraining = false;
             timeTraining = startTimer;
 
-            StopTraining();
             CheckCondition();
+            StopTraining();
         }
     }
 

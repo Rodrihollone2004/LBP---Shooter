@@ -21,9 +21,9 @@ public class JumpingState : IState
         {
             player.TransitionToState(new WalkingState());
         }
-        else if (player.IsTouchingWall() && player.playerInput.IsRunning)
+        if (Input.GetKeyDown(KeyCode.E) && player.DashCooldownTimer <= 0)
         {
-            player.TransitionToState(new WallRunningState());
+            player.TransitionToState(new DashingState());
         }
     }
 

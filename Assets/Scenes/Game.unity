@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5681,7 +5681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &165358696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5798,6 +5798,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165358695}
   m_CullTransparentMesh: 1
+--- !u!1 &184542291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184542292}
+  - component: {fileID: 184542293}
+  m_Layer: 7
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &184542292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184542291}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.467, y: -12.2, z: 0.492}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 898857392}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &184542293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184542291}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 4.73, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &195327830 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3508558367132781577, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
@@ -14479,6 +14532,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: -7644189986446751310, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -6533488524109365052, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
         type: 3}
       propertyPath: m_Layer
@@ -14587,7 +14645,7 @@ PrefabInstance:
     - target: {fileID: -872526267200310269, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -872526267200310269, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
         type: 3}
@@ -14742,7 +14800,7 @@ PrefabInstance:
     - target: {fileID: 3511445063933511601, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3511445063933511601, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
         type: 3}
@@ -14922,6 +14980,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 804313192}
+    - targetCorrespondingSourceObject: {fileID: -2476798148397688600, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 184542292}
     - targetCorrespondingSourceObject: {fileID: -8580044850853583739, guid: 8029fc5a5ebcdc74480a9fdbedd9872b,
         type: 3}
       insertIndex: -1
@@ -16195,7 +16257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1341677908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17981,7 +18043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1624729033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18875,7 +18937,7 @@ MonoBehaviour:
   victoryScreen: {fileID: 1889132941}
   defeatScreen: {fileID: 846246542}
   timeTraining: 20
-  totalTargetsTraining: 50
+  totalTargetsTraining: 2
 --- !u!1 &1832765720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4285090604037819929, guid: 6e9aa218e3299e34387bfc1c22da8a8d,
@@ -19566,18 +19628,16 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  wallRunCameraTilt: 15
-  impulseAngle: 1.2
-  impulseSideWall: 10
   runSound: {fileID: 8300000, guid: 79dbb185ab86e2d46af28ca7bfd978f3, type: 3}
+  dashForce: 25
+  dashUpwardForce: 2
+  dashDuration: 0.2
+  dashCooldown: 1
   graffitiTexture: {fileID: 2800000, guid: 024bc16135bc9cb4cb97d2a1823047f2, type: 3}
   graffitiSize: 1
   placementLayer:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 136
   graffitiMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
 --- !u!114 &1903651531
 MonoBehaviour:
