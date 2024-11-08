@@ -9,13 +9,16 @@ public class MovingTarget : MonoBehaviour
     private bool isMovingRight;
     [SerializeField] private float minX = -7f;
     [SerializeField] private float maxX = 7f;
+
+    [Header("Controladores")]
     [SerializeField] private TargetSpeed targetSpeed;
+    [SerializeField] private ActivateTraining activateTraining;
 
     [Header("Respawn")]
     [SerializeField] private float respawnX = 63f;
     [SerializeField] private Vector2 respawnRangeY = new Vector2(1.5f, 3f);
     [SerializeField] private Vector2 respawnRangeZ = new Vector2(22f, 36f);
-    private int startLife;
+    [SerializeField] private int startLife;
 
     private void Start()
     {
@@ -61,7 +64,9 @@ public class MovingTarget : MonoBehaviour
     {
         gameObject.SetActive(false);
         Invoke("Respawn", 0.5f);
+
         targetSpeed.life = startLife;
+        activateTraining.CurrentTargets += 1;
     }
 
     private void Respawn()

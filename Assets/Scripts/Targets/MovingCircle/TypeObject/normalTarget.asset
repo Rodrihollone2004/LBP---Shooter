@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8b34282c097dc4aa42eb96d961baab, type: 3}
   m_Name: normalTarget
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 7
   life: 2
