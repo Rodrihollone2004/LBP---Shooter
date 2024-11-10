@@ -7,7 +7,6 @@ public class Flashbang : MonoBehaviour, IGrenade
     private Image WhiteImage;
     private Rigidbody RB;
     private ParticleSystem FlashParticle;
-    //private MeshRenderer Renderer;
     private AudioSource WhiteNoise;
     //private AudioSource Bang;
     private CameraFlashbang player;
@@ -31,7 +30,6 @@ public class Flashbang : MonoBehaviour, IGrenade
     {
         objectToThrow = this.gameObject;
 
-        //Renderer = gameObject.GetComponent<MeshRenderer>();
         WhiteImage = GameObject.FindGameObjectWithTag("WhiteImage").GetComponent<Image>();
         WhiteNoise = GameObject.FindGameObjectWithTag("WhiteNoise").GetComponent<AudioSource>();
         //Bang = GameObject.FindGameObjectWithTag("Bang").GetComponent<AudioSource>();
@@ -57,11 +55,14 @@ public class Flashbang : MonoBehaviour, IGrenade
 
             if (player.IsFlashed)
             {
+                foreach (MeshRenderer meshRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+                {
+                    meshRenderer.enabled = false; // Desactivar los MeshRenderer en los hijos
+                }
                 WhiteImage.color = new Vector4(1, 1, 1, 1);
                 FlashParticle.Play();
                 //Bang.Play();
                 WhiteNoise.Play();
-                //Renderer.enabled = false;
 
                 float FadeSpeed = 1f;
                 float Modifier = 0.01f;
@@ -78,16 +79,19 @@ public class Flashbang : MonoBehaviour, IGrenade
                     yield return new WaitForSeconds(WaitTime);
                 }
 
-                Destroy(gameObject);
+                Destroy(gameObject, FlashParticle.main.duration);
                 WhiteNoise.Stop();
                 WhiteNoise.volume = 1;
             }
             else
             {
                 FlashParticle.Play();
-                Destroy(gameObject);
                 //Bang.Play();
-                //Renderer.enabled = false;
+                foreach (MeshRenderer meshRenderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+                {
+                    meshRenderer.enabled = false; // Desactivar los MeshRenderer en los hijos
+                }
+                Destroy(gameObject, FlashParticle.main.duration);
             }
         }
     }

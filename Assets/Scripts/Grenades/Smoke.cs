@@ -6,6 +6,7 @@ public class Smoke: MonoBehaviour, IGrenade
 {
     private Rigidbody RB;
     private ParticleSystem SmokeParticle;
+    private bool hasExploded = false;
 
     [Header("Setting Throw Item")]
     [SerializeField] KeyCode throwKey = KeyCode.M;
@@ -30,10 +31,11 @@ public class Smoke: MonoBehaviour, IGrenade
 
         SmokeParticle = GetComponent<ParticleSystem>();
         RB = GetComponent<Rigidbody>();
-        StartCoroutine(GrenadeController());
 
         mainCamera = Camera.main; 
         readyToThrow = true; 
+
+        StartCoroutine(GrenadeController());
     }
 
     public IEnumerator GrenadeController()
@@ -83,7 +85,25 @@ public class Smoke: MonoBehaviour, IGrenade
 
     private void TriggerExplosion()
     {
+        if (hasExploded) return;
+
+        hasExploded = true;
+
         SmokeParticle.Play();
-        Destroy(gameObject, SmokeParticle.main.duration); 
+
+        Transform meshObject = transform.Find("Plane/Plane"); 
+        if (meshObject != null)
+        {
+            MeshRenderer meshRenderer = meshObject.GetComponent<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                meshRenderer.enabled = false;
+            }
+        }
+
+        RB.isKinematic = true;
+        RB.detectCollisions = false;
+
+        Destroy(gameObject, SmokeParticle.main.duration);
     }
 }

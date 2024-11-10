@@ -5,6 +5,7 @@ public class ShootingRange : MonoBehaviour
     [SerializeField] private GameObject[] targets;
     [SerializeField] private Color activeColor = Color.red;
     [SerializeField] private Color inactiveColor = Color.white;
+    [SerializeField] private ActivateTraining activate;
 
     private ITargetState currentState;
     private int activeTargetIndex;
@@ -33,6 +34,8 @@ public class ShootingRange : MonoBehaviour
         {
             currentState.Deactivate(this, activeTargetIndex);
             StartNewRound();
+
+            activate.CurrentTargets += 1;
         }
     }
 

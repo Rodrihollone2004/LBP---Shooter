@@ -13,12 +13,16 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private AudioSource audioSource;
 
     private float currentHealth;
+    private Vector3 originalPosition;
+    private EnemyManager enemyManager;
 
     private void Start()
     {
         currentHealth = maxHealth;
         SetHealthbarUi();
         audioSource = GetComponent<AudioSource>();
+        originalPosition = transform.position;
+        enemyManager = FindObjectOfType<EnemyManager>();
     }
 
     public void DealDamage(int damage, Vector3 originPosition)
@@ -53,6 +57,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         if (currentHealth <= 0)
         {
+            enemyManager.RespawnEnemy(originalPosition);
             Destroy(gameObject);
         }
     }
