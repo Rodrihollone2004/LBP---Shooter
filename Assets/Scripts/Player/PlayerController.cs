@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleDashInput()
     {
-        if (Input.GetKeyDown(KeyCode.E) && dashCooldownTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.C) && dashCooldownTimer <= 0)
         {
             if (!isDashing)
             {
