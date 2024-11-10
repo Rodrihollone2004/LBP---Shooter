@@ -182,7 +182,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.01
+  m_Radius: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5834792212975050181
 Rigidbody:
@@ -5011,7 +5011,7 @@ MonoBehaviour:
   objectToThrow: {fileID: 5627928288833509531}
   throwForce: 15
   throwUpwardForce: 0
-  totalThrows: 41
+  totalThrows: 40
   throwCoolDown: 0.1
 --- !u!199 &-8794409929481099486
 ParticleSystemRenderer:

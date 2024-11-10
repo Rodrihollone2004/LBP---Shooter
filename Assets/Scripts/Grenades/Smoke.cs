@@ -91,15 +91,15 @@ public class Smoke: MonoBehaviour, IGrenade
 
         SmokeParticle.Play();
 
-        Transform meshObject = transform.Find("Plane/Plane"); 
-        if (meshObject != null)
-        {
-            MeshRenderer meshRenderer = meshObject.GetComponent<MeshRenderer>();
-            if (meshRenderer != null)
-            {
-                meshRenderer.enabled = false;
-            }
-        }
+        //Transform meshObject = transform.Find("Plane/Plane"); 
+        //if (meshObject != null)
+        //{
+        //    MeshRenderer meshRenderer = meshObject.GetComponent<MeshRenderer>();
+        //    if (meshRenderer != null)
+        //    {
+        //        meshRenderer.enabled = false;
+        //    }
+        //}
 
         RB.isKinematic = true;
         RB.detectCollisions = false;
