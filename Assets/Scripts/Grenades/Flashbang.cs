@@ -7,7 +7,7 @@ public class Flashbang : MonoBehaviour, IGrenade
     private Image WhiteImage;
     private Rigidbody RB;
     private ParticleSystem FlashParticle;
-    private MeshRenderer Renderer;
+    //private MeshRenderer Renderer;
     private AudioSource WhiteNoise;
     //private AudioSource Bang;
     private CameraFlashbang player;
@@ -31,7 +31,7 @@ public class Flashbang : MonoBehaviour, IGrenade
     {
         objectToThrow = this.gameObject;
 
-        Renderer = gameObject.GetComponent<MeshRenderer>();
+        //Renderer = gameObject.GetComponent<MeshRenderer>();
         WhiteImage = GameObject.FindGameObjectWithTag("WhiteImage").GetComponent<Image>();
         WhiteNoise = GameObject.FindGameObjectWithTag("WhiteNoise").GetComponent<AudioSource>();
         //Bang = GameObject.FindGameObjectWithTag("Bang").GetComponent<AudioSource>();
@@ -61,7 +61,7 @@ public class Flashbang : MonoBehaviour, IGrenade
                 FlashParticle.Play();
                 //Bang.Play();
                 WhiteNoise.Play();
-                Renderer.enabled = false;
+                //Renderer.enabled = false;
 
                 float FadeSpeed = 1f;
                 float Modifier = 0.01f;
@@ -78,16 +78,16 @@ public class Flashbang : MonoBehaviour, IGrenade
                     yield return new WaitForSeconds(WaitTime);
                 }
 
+                Destroy(gameObject);
                 WhiteNoise.Stop();
                 WhiteNoise.volume = 1;
-                Destroy(gameObject);
             }
             else
             {
                 FlashParticle.Play();
-                //Bang.Play();
-                Renderer.enabled = false;
                 Destroy(gameObject);
+                //Bang.Play();
+                //Renderer.enabled = false;
             }
         }
     }
