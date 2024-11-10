@@ -16,7 +16,7 @@ public class RunningState : IState
 
         player.Move();
 
-        if (Input.GetKeyDown(KeyCode.E) && player.DashCooldownTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.C) && player.DashCooldownTimer <= 0)
         {
             player.TransitionToState(new DashingState());
         }
