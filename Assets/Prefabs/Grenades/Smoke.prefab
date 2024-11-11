@@ -5004,14 +5004,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca92085cb255e6b42a333196059bf0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwKey: 109
+  throwKey: 113
   explosionLayers:
     serializedVersion: 2
     m_Bits: 8
   objectToThrow: {fileID: 5627928288833509531}
   throwForce: 15
   throwUpwardForce: 0
-  totalThrows: 40
+  totalThrows: 35
   throwCoolDown: 0.1
 --- !u!199 &-8794409929481099486
 ParticleSystemRenderer:

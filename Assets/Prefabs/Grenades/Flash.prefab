@@ -5024,9 +5024,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a080506c09f94204ca97af0957394cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwKey: 109
+  throwKey: 101
   objectToThrow: {fileID: 1670296751416433277}
   throwForce: 15
   throwUpwardForce: 0
-  totalThrows: 86
+  totalThrows: 85
   throwCoolDown: 0.1

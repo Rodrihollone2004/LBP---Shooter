@@ -11,7 +11,7 @@ public class MovingTarget : MonoBehaviour
     [SerializeField] private float maxX = 7f;
 
     [Header("Controladores")]
-    [SerializeField] private TargetSpeed targetSpeed;
+    [SerializeField] private TargetData targetData;
     [SerializeField] private ActivateTraining activateTraining;
 
     [Header("Respawn")]
@@ -22,8 +22,8 @@ public class MovingTarget : MonoBehaviour
 
     private void Start()
     {
-        targetSpeed.speed = normalSpeed;
-        startLife = targetSpeed.life;
+        targetData.speed = normalSpeed;
+        startLife = targetData.life;
     }
 
     private void Update()
@@ -32,15 +32,15 @@ public class MovingTarget : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.J))
         {
-            targetSpeed.speed = slowSpeed;
+            targetData.speed = slowSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.K))
         {
-            targetSpeed.speed = normalSpeed;
+            targetData.speed = normalSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
-            targetSpeed.speed = fastSpeed;
+            targetData.speed = fastSpeed;
         }
     }
 
@@ -48,13 +48,13 @@ public class MovingTarget : MonoBehaviour
     {
         if (isMovingRight)
         {
-            transform.Translate(Vector3.forward * (targetSpeed.speed) * Time.deltaTime);
+            transform.Translate(Vector3.forward * (targetData.speed) * Time.deltaTime);
             if (transform.position.z >= maxX)
                 isMovingRight = false;
         }
         else
         {
-            transform.Translate(Vector3.back * (targetSpeed.speed) * Time.deltaTime);
+            transform.Translate(Vector3.back * (targetData.speed) * Time.deltaTime);
             if (transform.position.z <= minX)
                 isMovingRight = true;
         }
@@ -65,7 +65,7 @@ public class MovingTarget : MonoBehaviour
         gameObject.SetActive(false);
         Invoke("Respawn", 0.5f);
 
-        targetSpeed.life = startLife;
+        targetData.life = startLife;
         activateTraining.CurrentTargets += 1;
     }
 
@@ -79,9 +79,9 @@ public class MovingTarget : MonoBehaviour
 
     public void OnHitByRaycast()
     {
-        targetSpeed.life -= 1;
+        targetData.life -= 1;
 
-        if (targetSpeed.life <= 0)
+        if (targetData.life <= 0)
         {
             HitTarget();
         }
