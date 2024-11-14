@@ -12,10 +12,11 @@ public class WeaponAK : MonoBehaviour, IWeapon
     [SerializeField] private AudioClip shootSoundAk;
     [SerializeField] private AudioClip reloadSoundAk;
     [Header("ShootHole")]
-    [SerializeField] private LayerMask impactLayers; 
+    [SerializeField] private LayerMask impactLayers;
     [SerializeField] private GameObject impactPrefab;
     [Header("Particles")]
     [SerializeField] private VisualEffect shootVisualEffect;
+    [SerializeField] private VisualEffect impactVisualEffect;
     private AudioSource audioSource;
 
     private int bulletAkCount;
@@ -96,6 +97,10 @@ public class WeaponAK : MonoBehaviour, IWeapon
 
             if ((impactLayers.value & (1 << hit.collider.gameObject.layer)) > 0)
             {
+                impactVisualEffect.transform.position = hit.point + hit.normal * 0.01f;
+                impactVisualEffect.transform.rotation = Quaternion.LookRotation(hit.normal);
+                impactVisualEffect.Play();
+
                 Vector3 impactPosition = hit.point + hit.normal * 0.01f;
                 GameObject impactEffect = Instantiate(impactPrefab, impactPosition, Quaternion.LookRotation(hit.normal));
                 impactEffect.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
