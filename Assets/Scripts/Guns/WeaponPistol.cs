@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.VFX;
 
 public class WeaponPistol : MonoBehaviour, IWeapon
 {
@@ -13,7 +14,7 @@ public class WeaponPistol : MonoBehaviour, IWeapon
     [SerializeField] private LayerMask impactLayers;
     [SerializeField] private GameObject impactPrefab;
     [Header("Particles")]
-    [SerializeField] private ParticleSystem shootParticles;
+    [SerializeField] private VisualEffect shootVisualEffect;
     private AudioSource audioSource;
 
     private int bulletPistolCount;
@@ -106,7 +107,7 @@ public class WeaponPistol : MonoBehaviour, IWeapon
             }
         }
         audioSource.PlayOneShot(shootSoundPistol);
-        shootParticles.Play();
+        shootVisualEffect.Play();
     }
 
 

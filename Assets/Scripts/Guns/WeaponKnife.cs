@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.VFX;
 
 public class WeaponKnife : MonoBehaviour, IWeapon
 {
@@ -13,7 +14,7 @@ public class WeaponKnife : MonoBehaviour, IWeapon
     [SerializeField] private LayerMask impactLayers;
     [SerializeField] private GameObject impactPrefab;
     [Header("Particles")]
-    [SerializeField] private ParticleSystem shootParticles;
+    [SerializeField] private VisualEffect shootVisualEffect;
     private AudioSource audioSource;
 
     private Camera mainCamera;
@@ -52,10 +53,10 @@ public class WeaponKnife : MonoBehaviour, IWeapon
 
             if ((impactLayers.value & (1 << hit.collider.gameObject.layer)) > 0)
             {
-                shootParticles.Play();
+                shootVisualEffect.Play();
                 Vector3 impactPosition = hit.point + hit.normal * 0.01f;
                 GameObject impactEffect = Instantiate(impactPrefab, impactPosition, Quaternion.LookRotation(hit.normal));
-                impactEffect.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                impactEffect.transform.localScale = new Vector3(0.035f, 0.035f, 0.035f);
                 StartCoroutine(DestroyImpactAfterDelay(impactEffect, 1f));
             }
         }

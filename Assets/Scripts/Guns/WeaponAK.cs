@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.VFX;
 using TMPro;
 using System.Collections;
 
@@ -14,7 +15,7 @@ public class WeaponAK : MonoBehaviour, IWeapon
     [SerializeField] private LayerMask impactLayers; 
     [SerializeField] private GameObject impactPrefab;
     [Header("Particles")]
-    [SerializeField] private ParticleSystem shootParticles;
+    [SerializeField] private VisualEffect shootVisualEffect;
     private AudioSource audioSource;
 
     private int bulletAkCount;
@@ -110,7 +111,7 @@ public class WeaponAK : MonoBehaviour, IWeapon
         }
 
         audioSource.PlayOneShot(shootSoundAk);
-        shootParticles.Play();
+        shootVisualEffect.Play();
     }
 
     private IEnumerator DestroyImpactAfterDelay(GameObject impactEffect, float delay)
