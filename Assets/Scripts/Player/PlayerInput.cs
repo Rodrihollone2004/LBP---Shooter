@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -12,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private KeyCode jump = KeyCode.Space;
     [SerializeField] private KeyCode run = KeyCode.LeftShift;
     [SerializeField] private KeyCode crouch = KeyCode.LeftControl;
+    [SerializeField] private KeyCode restart = KeyCode.Z;
+    [SerializeField] private KeyCode quit = KeyCode.Escape;
 
     private Vector3 inputVector;
     public Vector3 InputVector => inputVector;
@@ -51,6 +52,12 @@ public class PlayerInput : MonoBehaviour
         {
             xInput++;
         }
+
+        if (Input.GetKeyDown(restart))
+            SceneManager.LoadScene("Game");
+
+        if (Input.GetKeyDown(quit))
+            SceneManager.LoadScene("Menu");
 
         inputVector = new Vector3(xInput, yInput, zInput).normalized;
 
