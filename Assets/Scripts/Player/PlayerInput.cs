@@ -57,7 +57,7 @@ public class PlayerInput : MonoBehaviour
             SceneManager.LoadScene("Game");
 
         if (Input.GetKeyDown(quit))
-            SceneManager.LoadScene("Menu");
+            Application.Quit();
 
         inputVector = new Vector3(xInput, yInput, zInput).normalized;
 
