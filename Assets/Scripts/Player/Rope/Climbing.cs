@@ -93,7 +93,9 @@ public class RopeClimbing : MonoBehaviour
             {
                 moveDirection = Vector3.down * climbSpeed;
             }
+
             transform.position += moveDirection * Time.deltaTime;
+
         }
     }
 
