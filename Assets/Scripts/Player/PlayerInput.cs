@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private KeyCode crouch = KeyCode.LeftControl;
     [SerializeField] private KeyCode restart = KeyCode.Z;
     [SerializeField] private KeyCode quit = KeyCode.Escape;
+    [SerializeField] private KeyCode next = KeyCode.P;
 
     private Vector3 inputVector;
     public Vector3 InputVector => inputVector;
@@ -58,6 +59,9 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKeyDown(quit))
             Application.Quit();
+
+        if (Input.GetKeyDown(next))
+            SceneManager.LoadScene("Competitive Map");
 
         inputVector = new Vector3(xInput, yInput, zInput).normalized;
 
