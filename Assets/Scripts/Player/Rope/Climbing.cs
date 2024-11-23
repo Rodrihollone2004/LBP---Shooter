@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RopeClimbing : MonoBehaviour
@@ -13,11 +14,10 @@ public class RopeClimbing : MonoBehaviour
     private float climbTimer;
 
     [Header("Rope Limits")]
-    [SerializeField] private Transform ropeTop; 
-    
+    [SerializeField] private Transform ropeTop;
     [SerializeField] private bool isClimbing;
     [SerializeField] private bool isOnRope;
-
+    [SerializeField] private bool isOnTop;
 
 
     private void Update()
@@ -30,7 +30,7 @@ public class RopeClimbing : MonoBehaviour
 
     private void RopeCheck()
     {
-        isOnRope = Physics.CheckSphere(transform.position, 1f, whatIsRope);
+        isOnRope = Physics.CheckSphere(transform.position, 0.7f, whatIsRope);
 
         if (isOnRope)
         {
@@ -39,7 +39,7 @@ public class RopeClimbing : MonoBehaviour
             {
                 Transform rope = colliders[0].transform;
 
-                ropeTop = rope.Find("Top"); 
+                ropeTop = rope.Find("Top");
             }
         }
 
@@ -55,16 +55,30 @@ public class RopeClimbing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && isClimbing)
         {
             isClimbing = false;
-            StopClimbing(); 
+            StopClimbing();
         }
 
         if (isOnRope && Input.GetKeyDown(KeyCode.F))
         {
-            isClimbing = true;
-            rb.useGravity = false;
-            rb.velocity = Vector3.zero;
-            rb.isKinematic = true; 
-            playerController.Gravity = 0f;
+            if (playerController.IsGrounded())
+            {
+                rb.position += Vector3.up * 2f;
+                isOnTop = false;
+                isClimbing = true;
+                rb.useGravity = false;
+                rb.velocity = Vector3.zero;
+                rb.isKinematic = true;
+                playerController.Gravity = 0f;
+            }
+            else
+            {
+                isOnTop = false;
+                isClimbing = true;
+                rb.useGravity = false;
+                rb.velocity = Vector3.zero;
+                rb.isKinematic = true;
+                playerController.Gravity = 0f;
+            }
         }
 
         if (playerController.IsGrounded())
@@ -72,10 +86,13 @@ public class RopeClimbing : MonoBehaviour
             StopClimbing();
         }
 
-        if (transform.position.y >= ropeTop.position.y)
+        if (transform.position.y >= ropeTop.position.y && !playerController.IsDashing)
         {
+            isOnTop = true;
             StopClimbing();
-            rb.AddForce(Vector3.up * 7f, ForceMode.Impulse); 
+
+            if (isOnTop == true)
+                rb.AddForce(Vector3.up * 3f, ForceMode.Impulse);
         }
     }
 
@@ -95,12 +112,12 @@ public class RopeClimbing : MonoBehaviour
             }
 
             transform.position += moveDirection * Time.deltaTime;
-
         }
     }
 
     private void StopClimbing()
     {
+        isOnTop = false;
         isClimbing = false;
         isOnRope = false;
         rb.useGravity = true;
@@ -110,13 +127,13 @@ public class RopeClimbing : MonoBehaviour
 
         if (transform.position.y >= ropeTop.position.y)
         {
-            rb.velocity = Vector3.zero; 
+            rb.velocity = Vector3.zero;
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 1f);
+        Gizmos.DrawWireSphere(transform.position, 0.7f);
     }
 }

@@ -35,7 +35,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown = 1f;
     private float dashCooldownTimer;
     public float DashCooldownTimer { get => dashCooldownTimer; }
-    private bool isDashing;
+    public bool IsDashing { get; private set; }
+
     private Vector3 dashDirection;
 
     [Header("Graffiti Settings")]
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
         HandleGraffitiPlacement();
 
-        if (!isDashing)
+        if (!IsDashing)
         {
             Move();
             if (playerInput.IsRunning && IsGrounded() && IsMoving())
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C) && dashCooldownTimer <= 0)
         {
-            if (!isDashing)
+            if (!IsDashing)
             {
                 if (currentState is JumpingState)
                 {
@@ -103,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartDash()
     {
-        isDashing = true;
+        IsDashing = true;
         dashCooldownTimer = dashCooldown;
 
         Vector3 inputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
@@ -122,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
     public void EndDash()
     {
-        isDashing = false;
+        IsDashing = false;
         rb.useGravity = true;
 
         rb.drag = 5f;
