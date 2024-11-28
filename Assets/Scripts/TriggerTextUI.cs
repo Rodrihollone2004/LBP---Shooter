@@ -7,10 +7,13 @@ public class TriggerTextUI : MonoBehaviour
     [SerializeField] private string message = " ";
     [SerializeField] private float displayDuration = 5f;
 
+    private bool hasTriggered = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !hasTriggered)
         {
+            hasTriggered = true;
             ShowMessage();
         }
     }
