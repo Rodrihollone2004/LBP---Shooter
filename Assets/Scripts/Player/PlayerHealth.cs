@@ -22,7 +22,6 @@ public class PlayerHealth: MonoBehaviour
     {
         currentHealth -= damageAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log("Vida actual: " + currentHealth);
         UpdateHealthUI();
 
         OnHealthChanged?.Invoke(currentHealth);
@@ -37,7 +36,6 @@ public class PlayerHealth: MonoBehaviour
     {
         currentHealth += healAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log("Vida actual después de curarse: " + currentHealth);
         UpdateHealthUI();
 
         OnHealthChanged?.Invoke(currentHealth);
@@ -45,7 +43,6 @@ public class PlayerHealth: MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Jugador ha muerto");
         Invoke("RestartLevel", 2f);
     }
 

@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 public class RopeClimbing : MonoBehaviour
@@ -10,6 +10,7 @@ public class RopeClimbing : MonoBehaviour
     [SerializeField] private LayerMask whatIsRope;
 
     [Header("Climbing")]
+    [SerializeField] private TMP_Text textClimb;
     [SerializeField] private float climbSpeed, maxClimbTime;
     private float climbTimer;
 
@@ -34,6 +35,8 @@ public class RopeClimbing : MonoBehaviour
 
         if (isOnRope)
         {
+            textClimb.text = "Presiona F para subir";
+            textClimb.gameObject.SetActive(true);
             Collider[] colliders = Physics.OverlapSphere(transform.position, 1f, whatIsRope);
             if (colliders.Length > 0)
             {
@@ -41,6 +44,10 @@ public class RopeClimbing : MonoBehaviour
 
                 ropeTop = rope.Find("Top");
             }
+        }
+        else
+        {
+            textClimb.gameObject.SetActive(false);
         }
 
         if (playerController.IsGrounded())
@@ -60,6 +67,8 @@ public class RopeClimbing : MonoBehaviour
 
         if (isOnRope && Input.GetKeyDown(KeyCode.F))
         {
+            textClimb.text = "Presiona F para soltarte";
+
             if (playerController.IsGrounded())
             {
                 rb.position += Vector3.up * 2f;

@@ -401,7 +401,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.41960785}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -782,7 +782,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 1
     gravitySource: 0
-    maxNumParticles: 750
+    maxNumParticles: 300
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -1158,7 +1158,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 400
+        scalar: 200
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5011,7 +5011,7 @@ MonoBehaviour:
   objectToThrow: {fileID: 5627928288833509531}
   throwForce: 15
   throwUpwardForce: 0
-  totalThrows: 35
+  totalThrows: 29
   throwCoolDown: 0.1
 --- !u!199 &-8794409929481099486
 ParticleSystemRenderer:

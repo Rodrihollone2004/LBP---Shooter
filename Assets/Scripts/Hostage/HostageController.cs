@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class HostageController : MonoBehaviour
@@ -6,6 +7,7 @@ public class HostageController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float stoppingDistance;
     [SerializeField] float holdKeyTime = 4f;
+    [SerializeField] TMP_Text textHostage;
     float currentHoldKey;
 
     bool isCaught;
@@ -56,13 +58,16 @@ public class HostageController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 2f, layerMask))
         {
+            textHostage.text = "Hold 4 to pick hostage";
+            textHostage.gameObject.SetActive(true);
+
             if (Input.GetKey(KeyCode.Alpha4) && !isCaught)
             {
                 currentHoldKey += Time.deltaTime;
 
                 if (currentHoldKey >= holdKeyTime)
                 {
-                    Debug.Log("Rehén en manos");
+                    textHostage.text = "Press 4 to leave hostage";
                     isCaught = true;
                     currentHoldKey = 0f;
                 }
@@ -72,9 +77,9 @@ public class HostageController : MonoBehaviour
                 currentHoldKey = 0f;
             }
         }
-
         else if (Input.GetKeyDown(KeyCode.Alpha4) && isCaught)
         {
+            textHostage.gameObject.SetActive(false);
             isCaught = false;
         }
     }
