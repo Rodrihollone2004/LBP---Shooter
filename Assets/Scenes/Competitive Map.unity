@@ -5463,7 +5463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &270510831
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13485,7 +13485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 32a3ff23408c47146a4a0966e90c581d, type: 2}
+  m_Texture: {fileID: 8400000, guid: e959f6d5ee0e9794f92ed1b3ced01d51, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -34448,7 +34448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1443274588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34529,12 +34529,12 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 32a3ff23408c47146a4a0966e90c581d, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: e959f6d5ee0e9794f92ed1b3ced01d51, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -42412,7 +42412,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -46543,7 +46543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2007032158
 RectTransform:
   m_ObjectHideFlags: 0
