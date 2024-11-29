@@ -46802,7 +46802,7 @@ GameObject:
   - component: {fileID: 1771355966}
   - component: {fileID: 1771355967}
   m_Layer: 0
-  m_Name: Enemys
+  m_Name: EnemysContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53916,7 +53916,7 @@ MonoBehaviour:
   jump: 32
   run: 304
   crouch: 306
-  restart: 122
+  previous: 111
   quit: 27
   next: 112
 --- !u!54 &1903651532

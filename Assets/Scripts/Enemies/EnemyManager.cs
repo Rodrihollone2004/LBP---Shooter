@@ -7,6 +7,12 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float respawnDelay = 5f;
     [SerializeField] private GameObject enemyPrefab;
 
+    private Transform enemiesContainer;
+
+    private void Awake()
+    {
+        enemiesContainer = GameObject.Find("EnemysContainer")?.transform;
+    }
     public void RespawnEnemy(Vector3 position)
     {
         StartCoroutine(RespawnCoroutine(position));
@@ -16,6 +22,10 @@ public class EnemyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(respawnDelay);
 
-        Instantiate(enemyPrefab, position, Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemyPrefab, position, Quaternion.identity);
+        if (enemiesContainer != null)
+        {
+            newEnemy.transform.SetParent(enemiesContainer);
+        }
     }
 }

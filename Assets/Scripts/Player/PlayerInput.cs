@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private KeyCode jump = KeyCode.Space;
     [SerializeField] private KeyCode run = KeyCode.LeftShift;
     [SerializeField] private KeyCode crouch = KeyCode.LeftControl;
-    [SerializeField] private KeyCode restart = KeyCode.Z;
+    [SerializeField] private KeyCode previous = KeyCode.O;
     [SerializeField] private KeyCode quit = KeyCode.Escape;
     [SerializeField] private KeyCode next = KeyCode.P;
 
@@ -54,20 +54,33 @@ public class PlayerInput : MonoBehaviour
             xInput++;
         }
 
-        if (Input.GetKeyDown(restart))
-            SceneManager.LoadScene("Game");
+        if (Input.GetKeyDown(previous))
+            LoadPreviousScene();
 
         if (Input.GetKeyDown(quit))
-            Application.Quit();
+            SceneManager.LoadScene("Menu");
 
         if (Input.GetKeyDown(next))
-            SceneManager.LoadScene("Competitive Map");
+            LoadNextScene();
 
         inputVector = new Vector3(xInput, yInput, zInput).normalized;
 
         isJumping = Input.GetKeyDown(jump);
         isRunning = Input.GetKey(run);
         isCrouch = Input.GetKey(crouch);
+    }
+    private void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
+        SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    private void LoadPreviousScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int previousSceneIndex = (currentSceneIndex - 1 + SceneManager.sceneCountInBuildSettings) % SceneManager.sceneCountInBuildSettings;
+        SceneManager.LoadScene(previousSceneIndex);
     }
     void Update()
     {

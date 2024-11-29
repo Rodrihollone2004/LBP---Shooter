@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance { get; private set; }
-    [SerializeField] private AudioClip backgroundMusicScene1;
-    [SerializeField] private AudioClip backgroundMusicScene2;
+
+    [Header("Background Music for Each Scene")]
+    [SerializeField] private List<AudioClip> sceneMusic;
+
     private AudioSource audioSource;
     private void Awake()
     {
@@ -23,7 +25,7 @@ public class MusicManager : MonoBehaviour
         }
 
         audioSource = GetComponent<AudioSource>();
-        UpdateAmbientSound();
+        UpdateAmbientSound(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnEnable()
@@ -38,13 +40,18 @@ public class MusicManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        UpdateAmbientSound();
+        UpdateAmbientSound(scene.buildIndex);
     }
 
-    private void UpdateAmbientSound()
+    private void UpdateAmbientSound(int sceneIndex)
     {
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        AudioClip newClip = sceneIndex == 0 ? backgroundMusicScene1 : sceneIndex == 1 ? backgroundMusicScene2 : null;
+        if (sceneIndex < 0 || sceneIndex >= sceneMusic.Count)
+        {
+            Debug.LogWarning("No background music assigned for this scene.");
+            return;
+        }
+
+        AudioClip newClip = sceneMusic[sceneIndex];
 
         if (newClip != null && audioSource.clip != newClip)
         {
