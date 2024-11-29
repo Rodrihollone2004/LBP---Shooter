@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
         float mouseY = Input.GetAxisRaw("Mouse Y") * sensitivity * Time.deltaTime;
 
         xRot -= mouseY;
-        xRot = Mathf.Clamp(xRot, -45, 45);
+        xRot = Mathf.Clamp(xRot, -90, 90);
 
         transform.localRotation = Quaternion.Euler(xRot, 0f, tilt);
         playerBody.Rotate(Vector3.up * mouseX);

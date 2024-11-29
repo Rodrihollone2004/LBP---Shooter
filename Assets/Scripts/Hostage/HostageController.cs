@@ -7,7 +7,8 @@ public class HostageController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float stoppingDistance;
     [SerializeField] float holdKeyTime = 4f;
-    [SerializeField] TMP_Text textHostage;
+    [SerializeField] TMP_Text textHostagePick;
+    [SerializeField] TMP_Text textHostageNoPick;
     float currentHoldKey;
 
     bool isCaught;
@@ -46,7 +47,7 @@ public class HostageController : MonoBehaviour
 
     private void StopFollow()
     {
-        //Acá se pone la lógica de lo que va a hacer el rehen cuando esté sin pickear
+        //Acá se pone la lógica de lo que va a hacer el rehen cuando esté sin pickear // cheto
     }
 
     private void Inputs()
@@ -58,8 +59,8 @@ public class HostageController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 2f, layerMask))
         {
-            textHostage.text = "Hold 4 to pick hostage";
-            textHostage.gameObject.SetActive(true);
+            textHostageNoPick.text = "Hold 4 to pick hostage";
+            textHostageNoPick.gameObject.SetActive(true);
 
             if (Input.GetKey(KeyCode.Alpha4) && !isCaught)
             {
@@ -67,7 +68,9 @@ public class HostageController : MonoBehaviour
 
                 if (currentHoldKey >= holdKeyTime)
                 {
-                    textHostage.text = "Press 4 to leave hostage";
+                    textHostageNoPick.gameObject.SetActive(false);
+                    textHostagePick.gameObject.SetActive(true);
+                    textHostagePick.text = "Press 4 to leave hostage";
                     isCaught = true;
                     currentHoldKey = 0f;
                 }
@@ -79,8 +82,16 @@ public class HostageController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4) && isCaught)
         {
-            textHostage.gameObject.SetActive(false);
+            textHostagePick.gameObject.SetActive(false);
             isCaught = false;
+        }      
+        else
+        {
+            textHostageNoPick.gameObject.SetActive(false);
+        }
+        if (isCaught)
+        {
+            textHostageNoPick.gameObject.SetActive(false);
         }
     }
 }

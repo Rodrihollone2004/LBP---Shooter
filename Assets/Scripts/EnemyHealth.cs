@@ -9,6 +9,7 @@ public class EnemyHealth2 : MonoBehaviour, IDamageable
     [SerializeField] private AudioClip damageSound;
     [SerializeField] private bool isImmortal = false;
     [SerializeField] private EnemyData enemyData;
+    public static int contadorGeneral = 0;
     private AudioSource audioSource;
 
     private float currentHealth;
@@ -55,6 +56,7 @@ public class EnemyHealth2 : MonoBehaviour, IDamageable
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            contadorGeneral++;
         }
     }
 

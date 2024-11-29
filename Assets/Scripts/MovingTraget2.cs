@@ -1,24 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingTarget : MonoBehaviour
+public class MovingTraget2 : MonoBehaviour
 {
     [Header("Movement")]
     private int slowSpeed = 3;
-    private int normalSpeed = 7;
-    private int fastSpeed = 11;
-    private bool isMovingRight;
-    [SerializeField] private float minX = -7f;
-    [SerializeField] private float maxX = 7f;
+    private int normalSpeed = 5;
+    private int fastSpeed = 8;
+    private bool isMovingUp;
+    [SerializeField] private float minY = 1.5f;
+    [SerializeField] private float maxY = 3f;
     [SerializeField] private bool canMove = true;
 
     [Header("Controladores")]
     [SerializeField] private TargetData targetData;
-    [SerializeField] private ActivateTraining activateTraining;
 
-    [Header("Respawn")]
-    [SerializeField] private float respawnX = 63f;
-    [SerializeField] private Vector2 respawnRangeY = new Vector2(1.5f, 3f);
-    [SerializeField] private Vector2 respawnRangeZ = new Vector2(22f, 36f);
+    [Header("Vida")]
     [SerializeField] private int startLife;
 
     private void Start()
@@ -50,35 +48,25 @@ public class MovingTarget : MonoBehaviour
 
     public void Move()
     {
-        if (isMovingRight)
+        if (isMovingUp)
         {
-            transform.Translate(Vector3.forward * (targetData.speed) * Time.deltaTime);
-            if (transform.position.z >= maxX)
-                isMovingRight = false;
+            transform.Translate(Vector3.up * targetData.speed * Time.deltaTime);
+            if (transform.position.y >= maxY)
+                isMovingUp = false;
         }
         else
         {
-            transform.Translate(Vector3.back * (targetData.speed) * Time.deltaTime);
-            if (transform.position.z <= minX)
-                isMovingRight = true;
+            transform.Translate(Vector3.down * targetData.speed * Time.deltaTime);
+            if (transform.position.y <= minY)
+                isMovingUp = true;
         }
     }
 
     public void HitTarget()
     {
         gameObject.SetActive(false);
-        Invoke("Respawn", 0.5f);
 
         targetData.life = startLife;
-        activateTraining.CurrentTargets += 1;
-    }
-
-    private void Respawn()
-    {
-        float randomZ = Random.Range(respawnRangeZ.x, respawnRangeZ.y);
-        float randomY = Random.Range(respawnRangeY.x, respawnRangeY.y);
-        transform.position = new Vector3(respawnX, randomY, randomZ);
-        gameObject.SetActive(true);
     }
 
     public void OnHitByRaycast()
@@ -95,3 +83,4 @@ public class MovingTarget : MonoBehaviour
         canMove = value;
     }
 }
+

@@ -43,7 +43,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Texture graffitiTexture;
     [SerializeField] private float graffitiSize = 1f;
     [SerializeField] private LayerMask placementLayer; 
-    [SerializeField] private Material graffitiMaterial; 
+    [SerializeField] private Material graffitiMaterial;
+
+    private bool canMove = true;
+
 
     void Awake()
     {
@@ -165,6 +168,8 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
+        if (!canMove) return;
+
         float speed = playerInput.IsRunning ? runSpeed : walkSpeed;
         Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         Vector3 move = mainCamera.transform.forward * direction.z + mainCamera.transform.right * direction.x;
@@ -234,5 +239,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         Destroy(graffiti);
+    }
+
+    public void AllowMovement(bool allow)
+    {
+        canMove = allow;
     }
 }

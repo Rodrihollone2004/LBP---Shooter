@@ -1,9 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TriggerTextUI : MonoBehaviour
+public class Damageandtext : MonoBehaviour
 {
+    [SerializeField] private int damage = 60;
+    private bool damageApplied = false;
+
     [SerializeField] private TextMeshProUGUI uiText;
     [SerializeField] private Image uiImage;
     [SerializeField] private string message = " ";
@@ -15,6 +20,16 @@ public class TriggerTextUI : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasTriggered)
         {
+            if (!damageApplied)
+            {
+                PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(damage);
+                }
+                damageApplied = true;
+            }
+
             hasTriggered = true;
 
             PlayerController playerController = other.GetComponent<PlayerController>();
@@ -60,7 +75,7 @@ public class TriggerTextUI : MonoBehaviour
             PlayerController playerController = player.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.AllowMovement(true); 
+                playerController.AllowMovement(true);
             }
         }
     }

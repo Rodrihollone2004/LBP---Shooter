@@ -782,7 +782,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 1
     gravitySource: 0
-    maxNumParticles: 300
+    maxNumParticles: 750
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -1158,7 +1158,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 200
+        scalar: 400
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5011,7 +5011,7 @@ MonoBehaviour:
   objectToThrow: {fileID: 5627928288833509531}
   throwForce: 15
   throwUpwardForce: 0
-  totalThrows: 29
+  totalThrows: 25
   throwCoolDown: 0.1
 --- !u!199 &-8794409929481099486
 ParticleSystemRenderer:
@@ -5076,7 +5076,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: -462981019419857548, guid: d57b995daf0ee974bb86836f1e2f8d7b, type: 3}
+  m_Mesh: {fileID: 289301614986012343, guid: 0cc64eef73923d542a19ba645796cd77, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}

@@ -113,6 +113,13 @@ public class WeaponAK : MonoBehaviour, IWeapon
             {
                 target.OnHitByRaycast();
             }
+
+            MovingTraget2 target2 = hit.transform.GetComponent<MovingTraget2>();
+
+            if (target2 != null)
+            {
+                target2.OnHitByRaycast();
+            }
         }
 
         audioSource.PlayOneShot(shootSoundAk);
